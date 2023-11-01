@@ -1,0 +1,60 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background: rgba(0, 81, 255, 0.537);
+}
+.pgn{
+    padding: 1.5vw;
+    margin: 2vw 35vw 0px 35vw;
+    background: rgba( 0, 79, 255, 0.6 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+@media (max-width: 825px){
+    .pgn{
+        margin: 1vw 15vw 0px 15vw;
+    }
+}
+@media (max-width: 380px){
+    .pgn{
+        margin: 1vw 5vw 0px 5vw;
+    }
+}
+header{
+    text-align: center;
+    width: 100%;
+
+}
+.provador-title{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.page{
+    text-align: center;
+    width: 100%;
+}
+.inputs{
+    border: 1px;
+    color: black;
+    width: 220px;
+    height: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+.pj-logo img{
+  width: 18vw;
+  object-fit: cover;
+  object-position: bottom;
+}
+.cadpill{
+    background-color: rgb(84, 242, 84);
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 2px 5px;
+    color: rgb(21, 68, 255);
+}

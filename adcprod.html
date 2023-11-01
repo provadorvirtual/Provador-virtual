@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camisas e Blusas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!--Favicon Area-->
+    <link rel="apple-touch-icon" sizes="180x180" href="faviconpackage/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="faviconpackage/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="faviconpackage/favicon-16x16.png">
+    <link rel="manifest" href="faviconpackage/site.webmanifest">
+    <link rel="mask-icon" href="faviconpackage/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!--Favicon end-->
+    
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; /* Cinza claro */
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #00CED1; /* Azul turquesa */
+            color: #fff; /* Texto branco */
+        }
+
+        #voltar {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #00CED1;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #conteudo {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .botao-foto {
+            display: inline-block;
+            margin: 10px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #00CED1;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border: 2px solid #000;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .icone {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+        }
+
+        #adicionar-tecidos {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px 40px;
+            border-radius: 10px;
+            background-color: #00CED1;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border: 2px solid #000;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        #botoes-adicionais {
+            margin-top: 20px;
+        }
+
+        .botao-adicional {
+            display: inline-block;
+            margin: 10px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #00CED1;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border: 2px solid #000;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        #tabela-informacoes {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 2px solid #00CED1; /* Azul turquesa */
+            text-align: center;
+        }
+
+        th {
+            background-color: #00CED1; /* Azul turquesa */
+            color: #fff; /* Texto branco */
+        }
+
+        td button {
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #00CED1; /* Azul turquesa */
+            color: #fff; /* Texto branco */
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <a href="escprod.html" style="text-decoration: none;" id="voltar">Voltar</a>
+        <h1>Camisas e Blusas</h1>
+    </div>
+
+    <div id="conteudo">
+        <div id="botoes-adicionais">
+            <button class="botao-foto">
+                <i class="fas fa-camera icone"></i>
+                Frente
+            </button>
+            <button class="botao-foto">
+                <i class="fas fa-camera icone"></i>
+                Costa
+            </button>
+            <button class="botao-foto">
+                <i class="fas fa-camera icone"></i>
+                Esquerda
+            </button>
+            <button class="botao-foto">
+                <i class="fas fa-camera icone"></i>
+                Direita
+            </button>
+        </div>
+
+        <a href="perfil.html"><button id="adicionar-tecidos">Adicionar Tecidos</button></a>
+
+        <div id="tabela-informacoes">
+            Tabela de Informações
+            <table>
+                <tr>
+                    <th>Valor</th>
+                    <th>Tamanho</th>
+                    <th>Medidas</th>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Valor 1</span>
+                        <button>+</button>
+                    </td>
+                    <td>
+                        <span>Tamanho 1</span>
+                        <button>+</button>
+                    </td>
+                    <td>
+                        <span>Medidas 1</span>
+                        <button>+</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Valor 2</span>
+                        <button>+</button>
+                    </td>
+                    <td>
+                        <span>Tamanho 2</span>
+                        <button>+</button>
+                    </td>
+                    <td>
+                        <span>Medidas 2</span>
+                        <button>+</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    <h1 style="color: #00CED1;">Medidas Prontas/Padronizadas</h1>
+    </div>
+    <div class="outrasopc">
+        <a href="#medidas">
+            <img src="https://cdn.sistemawbuy.com.br/arquivos/d483322df6ff7b1fff2843a45ea74bb7/blogitens/logo-adidas-2022-pb-051.jpg" alt="" srcset="">
+        </a><style>#medidas:target{display: block;}</style>
+    </div>
+    <div class="outrasopc" id="nike">
+        <a href="#medidas">
+        <img src="https://i.pinimg.com/originals/d5/c7/2c/d5c72cb18497d1ea65f29f0857a8c760.png" alt="" srcset="">
+        </a><style>#medidas:target{display: block;}</style>
+    </div>
+    <div class="outrasopc" id="add">
+        <a href="#adicionar">
+            <img src="https://pngimg.com/d/plus_PNG75.png" alt="" srcset="" style="filter: invert(1);">
+        </a><style>#adicionar:target{display: block;}</style>
+    </div>
+    <div id="adicionar">
+        <h4>Adicionar dados</h4>
+        <button>Adicionar frente</button>
+        <button>Adicionar esquerda</button>
+        <button>Adicionar costas</button>
+        <button>Adicionar direita</button>
+        <p>Qual a marca?</p><input type="text">
+        <p>Qual a categoria desta marca?</p><input type="text">
+    </div><style>#adicionar{text-align: center; display: none;width: 50%; height: 400px;position: fixed;left: 25%;right: 25%;top: 15%; background-color: rgba(20, 229, 229, 0.754);z-index: 1;content: '';}</style>
+    <div class="medidas" id="medidas" >
+        <a href="#">X</a>
+        <h4>Medidas da marca X</h4>
+        <p>frente: x</p>
+        <p>Costas: x</p>
+        <p>esquerda: x</p>
+        <p>direita: x</p>
+        <p>Outras informações: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu nunc blandit, volutpat nulla nec, interdum nisl. Integer sit amet pharetra est. Ut at sem velit. Cras ut ex feugiat, facilisis libero et, iaculis elit. Ut nec vulputate quam. Vivamus pharetra eros purus, et varius lorem vulputate nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam viverra pulvinar semper. Integer porttitor pretium tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+    
+    <style>
+        #medidas{
+            display: none;
+            position: fixed;
+            top: 10%;
+            left: 25%;
+            right: 25%;
+            width: 50%;
+            height: 470px;
+            text-align: center;
+            background: rgba( 255, 255, 255, 0.2 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 5px );
+            -webkit-backdrop-filter: blur( 5px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            content: "";
+            z-index: 1;
+        }
+        #medidas a{
+            text-align: right;
+            text-decoration: none;
+            color: #000;
+            position: absolute;
+            right: 0%;
+            background-color: red;
+            padding: 1px 5px;
+            border-radius: 50%;
+        }
+    </style>
+    </div>
+
+    <style>.outrasopc{display: inline-flex; width: 240px; height: 140px; background: rgb(0, 0, 0);margin-top: 30px;margin-left: 70px;border-radius: 20px;}</style>
+    <style>.outrasopc img{width: 200px; height: 120px; margin-left: 20px;} *{margin-bottom: 40px;}.outrasopc:target{.medidas{}}</style>
+</body>
+</html>

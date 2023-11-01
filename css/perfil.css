@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: cadetblue;
+}
+
+#header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: cadetblue;
+}
+
+#nome-loja {
+    font-size: 24px;
+    color: #000000;
+}
+
+#nome-loja-input {
+    font-size: 24px;
+    color: #000000;
+    border: none;
+    background-color: cadetblue;
+    outline: none;
+}
+
+#foto-loja-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#foto-loja {
+    max-width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#foto-loja:hover {
+    transform: scale(1.1);
+}
+
+#alterar-foto {
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+}
+
+#endereco-loja {
+    font-size: 18px;
+    color: #000000;
+    margin-top: 10px;
+}
+
+#endereco-loja-input {
+    font-size: 18px;
+    color: #000000;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+#total-visitas {
+    font-size: 16px;
+    color: #000000;
+    margin-top: 10px;
+}
+
+#total-pecas {
+    font-size: 16px;
+    color: #000000;
+}
+
+#linha {
+    width: 100%;
+    border-top: 2px solid #000;
+    margin-top: 20px;
+}
+
+#seus-produtos {
+    text-align: center;
+    padding: 20px 0;
+    background-color: darkcyan;
+}
+
+.acao-produto {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #00CED1;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #000;
+    text-align: center;
+    cursor: pointer;
+}
+
+#lixeira {
+    display: block;
+    margin: 20px auto;
+    font-size: 24px;
+    color: #FF0000;
+    text-align: center;
+    cursor: pointer;
+}

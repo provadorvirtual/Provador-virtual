@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Usuario</title>
+    <link rel="stylesheet" href="css/perfil.css">
+    <!--Favicon Area-->
+    <link rel="apple-touch-icon" sizes="180x180" href="faviconpackage/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="faviconpackage/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="faviconpackage/favicon-16x16.png">
+    <link rel="manifest" href="faviconpackage/site.webmanifest">
+    <link rel="mask-icon" href="faviconpackage/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!--Favicon end-->
+</head>
+<body>
+    <div id="header">
+        <a href="index.html"><i id="home" class='bx bxs-home'></i></a><style>#home{font-size: 20px; color: white;position: fixed;margin-left: 15px; left: 0%;}</style>
+        <span id="nome-loja">Seu Nome: </span>
+        <input type="text" id="nome-loja-input" value="Meu Nome" onclick="editarNome()">
+        <div id="foto-loja-container">
+            <img id="foto-loja" src="aru.jfif" alt="Foto da Loja" onclick="alterarFoto()">
+            <div id="alterar-foto">Alterar Foto</div>
+        </div>
+    </div>
+    <hr id="linha">
+    <div id="seus-produtos">
+        <h1>Produtos Favoritados</h1>
+        <a href="#" class="acao-produto">Categorias</a>
+        <a href="#" class="acao-produto">Mais Opções</a>
+        <a href="#" class="acao-produto">Editar Perfil</a>
+    </div>
+    <div id="lixeira">
+        <i class="fas fa-trash-alt"></i>
+    </div>
+    <!-- Adicione o script JavaScript para a função de alterar a foto -->
+    <script>
+        function alterarFoto() {
+            // Coloque aqui a lógica para alterar a foto da loja
+            alert("Cliquei para alterar a foto da loja.");
+        }
+
+        function editarNome() {
+            const nomeLojaInput = document.getElementById("nome-loja-input");
+            nomeLojaInput.removeAttribute("readonly");
+            nomeLojaInput.focus();
+        }
+
+    </script>
+    <!-- Adicione o link para o Font Awesome no seu projeto -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;  
+}
+body{
+    background-color: cadetblue;
+    padding: 0%;
+    margin: 0%;
+}
+.todo{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.mais, .cbd{
+    width: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.tit{
+    font-size: 35px;
+}
+.menu{
+    display: flex;
+    flex-flow: row nowrap;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 6.3%;
+    background-color: darkcyan;
+    border-bottom: 3px solid whitesmoke;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.cms{
+    margin-top: 60px;
+    margin-bottom: 30px;
+    background-color: aqua;
+    padding: 20px;
+    border-bottom: 3px solid whitesmoke;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.sht, .clc, .sap, .ot{
+    margin: 30px;
+    height: 5%;
+    background-color: aqua;
+    padding: 20px;
+    border-bottom: 3px solid whitesmoke;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.cms:hover, .sht:hover, .clc:hover, .sap:hover, .ot:hover{
+    background-color: rgb(41, 137, 137);
+    border-bottom: 3px solid black;
+    font-size: 21px;
+}
+.opc{
+    text-decoration: none;
+    color: black;
+}
+.voltar{
+    height: 6%;
+    width: 5%;
+}
+.voltar:hover{
+    width: 5.5%;
+    transition: 3s;
+    background-color: darkgray;
+    border-radius: 35%;
+}
+.volt{
+    width: 100%;
+}
