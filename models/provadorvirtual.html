@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provador Virtual</title>
+</head>
+<body>
+    <h1>By Provador Virtual.</h1>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+<p>escolha qual roupa deseja testar</p>
+<model-viewer id="flamengo22-23" class="provador-virtual" src="roupas/flamengo.gltf" camera-controls touch-action="pan-y"></model-viewer>
+<model-viewer id="NIRVANA" class="provador-virtual" src="roupas/modelopadrao.zip" camera-controls touch-action="pan-y"></model-viewer>
+<model-viewer id="CR7-Homenagem" class="provador-virtual" src="roupas/cristianohomenagem.gltf" camera-controls touch-action="pan-y"></model-viewer>
+<!--funcionamento basico - nao altere nada aqui - nao cite o ID de qualquer modelviewer, apenas sua classe-->
+<style>#flamengo22-23{display: none;}#NIRVANA{display: none;}#CR7-Homenagem{display: none;}</style>
+<style>#flamengo22-23:target{display: block;}#NIRVANA:target{display: block;}#CR7-Homenagem:target{display: block;}</style>
+
+<a class="seletor" href="#flamengo22-23">Blusa Flamengo 22/23 </a>
+<a class="seletor" href="#CR7-Homenagem">Roupa Cristiano Ronaldo Homenagem</a>
+<a class="seletor" href="#NIRVANA">Blusa NIRVANA</a>
+<style>.seletor{margin: 10px;;}</style>
+
+<style>
+    h1{
+        text-align:center;
+        font-family:arial;
+        margin-top:5px;
+    }
+    
+    model-viewer{
+        background-color:gray;
+        padding:10px;
+        margin-left:18%;
+        width: 55vw;
+        height: 60vh;
+    }
+    @media (max-width:450px){
+        model-viewer{margin-left:1%;width: 320px;height: 170px;}
+    }
+</style>
+<footer>Alpha test</footer>
+</body>
+</html>
