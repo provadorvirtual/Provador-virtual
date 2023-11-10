@@ -4,24 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/prov.css">
     <title>Provador Virtual</title>
 </head>
 <body>
-    <h1>By Provador Virtual.</h1>
+   
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
-<p>escolha qual roupa deseja testar</p>
+<div class="todo">
+<div class="menu">
+    <div class="adicionar">
+        <a href="perfillojaadc.html"><img class="mn cbd" src="img/vol.png" alt="voltar"></a>
+    </div>
+    <div class="tit">
+         <a class="mn" href="provadorvirtual.html">Provador Virtual</a>
+    </div>
+    <div class="logo">
+        <img class="mn cbd" src="img/cam.png" alt="Logo Provador">
+    </div>
+   </div>
+<div class="provador"> 
 <model-viewer id="flamengo22-23" class="provador-virtual" src="roupas/flamengo.gltf" camera-controls touch-action="pan-y"></model-viewer>
-<model-viewer id="NIRVANA" class="provador-virtual" src="roupas/modelopadrao.zip" camera-controls touch-action="pan-y"></model-viewer>
+<model-viewer id="NIRVANA" class="provador-virtual" src="roupas/nirvana.gltf" camera-controls touch-action="pan-y"></model-viewer>
 <model-viewer id="CR7-Homenagem" class="provador-virtual" src="roupas/cristianohomenagem.gltf" camera-controls touch-action="pan-y"></model-viewer>
 <!--funcionamento basico - nao altere nada aqui - nao cite o ID de qualquer modelviewer, apenas sua classe-->
 <style>#flamengo22-23{display: none;}#NIRVANA{display: none;}#CR7-Homenagem{display: none;}</style>
 <style>#flamengo22-23:target{display: block;}#NIRVANA:target{display: block;}#CR7-Homenagem:target{display: block;}</style>
-
-<a class="seletor" href="#flamengo22-23">Blusa Flamengo 22/23 </a>
-<a class="seletor" href="#CR7-Homenagem">Roupa Cristiano Ronaldo Homenagem</a>
-<a class="seletor" href="#NIRVANA">Blusa NIRVANA</a>
+</div>
+<div class="roupas">
+    
+    <div class="fla">
+         <img class="cbds" src="img/cbd.png" alt="Cabide">
+         <a class="seletor" id="escolhas" href="#flamengo22-23">Blusa Flamengo 22/23 </a>
+     </div>
+     <div class="cr">
+         <img class="cbds" src="img/cbd.png" alt="Cabide">
+         <a class="seletor" id="escolhas" href="#CR7-Homenagem">Roupa Cristiano Ronaldo Homenagem</a>
+     </div>
+     <div class="nirv">
+        <img class="cbds" src="img/cbd.png" alt="Cabide">
+         <a class="seletor" id="escolhas" href="#NIRVANA">Blusa NIRVANA</a>
+     </div>
+</div>
+</div>
 <style>.seletor{margin: 10px;;}</style>
-
 <style>
     h1{
         text-align:center;
@@ -32,14 +57,34 @@
     model-viewer{
         background-color:gray;
         padding:10px;
-        margin-left:18%;
+        margin-left:20%;
         width: 55vw;
         height: 60vh;
+        border: 2px solid brown;
+        border-radius: 10%;
     }
     @media (max-width:450px){
         model-viewer{margin-left:1%;width: 320px;height: 170px;}
     }
 </style>
-<footer>Alpha test</footer>
+<footer> 
+    <div class="rod">
+       <img src="img/infologo.jpg" alt="Informações" class="logorod">
+    </div>
+    <div class="inf">
+        <div class="num">
+            <b>N°:  M</b>
+        </div>
+        <div class="din">
+            <b>R$: 60,00</b>
+        </div>
+        <div class="alt">
+            <b>Altura: 1,73</b>
+        </div>
+        <div class="pes">
+            <b>Peso: 60kg</b>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
