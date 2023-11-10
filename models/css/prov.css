@@ -9,7 +9,6 @@ body{
 .menu{
     display: flex;
     flex-flow: row nowrap;
-    position: fixed;
     justify-content: space-between;
     align-items: center;
     width: 99%;
