@@ -149,19 +149,17 @@ a{
     width: 100%;
     margin-top: 80px;
     display: flex;
-    flex-flow: column wrap;
     justify-content: center;
+    align-items: center;
     text-align: center;
     flex: 1 1 100%;    
     height: 70%;
 }
-.logoprod{
-    width: 100%;
-}
 .logopd{
-    width: 16%;
-    border: 3px solid rgb(57, 106, 106);
+    width: 80px;
+    border: 2px solid rgb(57, 106, 106);
     border-radius: 50%;
+    margin-right: 3%;
 }
 .prodtitulo{
     font-size: 50px;
@@ -180,6 +178,7 @@ a{
     width: 34%;
     height: 100%;
     margin-top: 50px;
+    padding-bottom: 10px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -200,9 +199,17 @@ a{
 .valor{
     color: rgb(15, 177, 109);
 }
+.vst{
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: rgb(46, 144, 229);
+    color: white;
+    border: 1px solid rgba( 0, 79, 255, 0.6 );
+    border-radius: 10px;
+    font-size: 22px !important;
+}
 .vst:hover{
-    font-size: 23px;
-    text-shadow: 3px 3px 3px rgb(2, 179, 249);
+    font-size: 24px !important;
 }
 footer{
     width: 99%;
