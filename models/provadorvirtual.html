@@ -6,16 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/prov.css">
     <title>Provador Virtual</title>
-
-    <!--Favicon Area-->
-    <link rel="apple-touch-icon" sizes="180x180" href="../faviconpackage/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../faviconpackage/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../faviconpackage/favicon-16x16.png">
-    <link rel="manifest" href="../faviconpackage/site.webmanifest">
-    <link rel="mask-icon" href="../faviconpackage/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="theme-color" content="#ffffff">
-    <!--Favicon end-->"
 </head>
 <body>
    
@@ -23,35 +13,35 @@
 <div class="todo">
 <div class="menu">
     <div class="adicionar">
-        <a href="../index.html"><img class="mn cbd" src="../img/vol.png" alt="voltar"></a>
+        <a href="perfillojaadc.html"><img style="filter: invert(1);" class="mn cbd" src="img/vol.png" alt="voltar"></a>
     </div>
     <div class="tit">
-         <a class="mn" href="provadorvirtual.html">Provador Virtual</a>
+         <a class="mn" href="provadorvirtual.html"><h4 style="color: white;">Provador Virtual</h4></a>
     </div>
     <div class="logo">
-        <img class="mn cbd" src="../img/cam.png" alt="Logo Provador">
+        <img class="mn cbd" style="filter: invert(1);" src="img/cam.png" alt="Logo Provador">
     </div>
    </div>
 <div class="provador"> 
 <model-viewer id="flamengo22-23" class="provador-virtual" src="roupas/flamengo.gltf" camera-controls touch-action="pan-y"></model-viewer>
-<model-viewer id="NIRVANA" class="provador-virtual" src="roupas/nirvana.gltf" camera-controls touch-action="pan-y"></model-viewer>
+<model-viewer id="NIRVANA" class="provador-virtual" src="roupas/modelopadrao.zip" camera-controls touch-action="pan-y"></model-viewer>
 <model-viewer id="CR7-Homenagem" class="provador-virtual" src="roupas/cristianohomenagem.gltf" camera-controls touch-action="pan-y"></model-viewer>
 <!--funcionamento basico - nao altere nada aqui - nao cite o ID de qualquer modelviewer, apenas sua classe-->
 <style>#flamengo22-23{display: none;}#NIRVANA{display: none;}#CR7-Homenagem{display: none;}</style>
 <style>#flamengo22-23:target{display: block;}#NIRVANA:target{display: block;}#CR7-Homenagem:target{display: block;}</style>
 </div>
-<h2 style="text-align: center;">Outras Roupas</h2>
 <div class="roupas">
+    
     <div class="fla">
-         <img class="cbds" src="../img/cbd.png" alt="Cabide">
+         <img class="cbds" src="img/cbd.png" alt="Cabide">
          <a class="seletor" id="escolhas" href="#flamengo22-23">Blusa Flamengo 22/23 </a>
      </div>
      <div class="cr">
-         <img class="cbds" src="../img/cbd.png" alt="Cabide">
+         <img class="cbds" src="img/cbd.png" alt="Cabide">
          <a class="seletor" id="escolhas" href="#CR7-Homenagem">Roupa Cristiano Ronaldo Homenagem</a>
      </div>
      <div class="nirv">
-        <img class="cbds" src="../img/cbd.png" alt="Cabide">
+        <img class="cbds" src="img/cbd.png" alt="Cabide">
          <a class="seletor" id="escolhas" href="#NIRVANA">Blusa NIRVANA</a>
      </div>
 </div>
@@ -65,21 +55,23 @@
     }
     
     model-viewer{
-        background-color:gray;
+        background-color:rgb(255, 255, 255);
         padding:10px;
         margin-left:20%;
         width: 55vw;
         height: 60vh;
-        border: 2px solid brown;
+        border: 2px solid rgba( 0, 79, 255, 0.6 );
+        box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.119);
         border-radius: 10%;
     }
+    
     @media (max-width:450px){
         model-viewer{margin-left:1%;width: 320px;height: 170px;}
     }
 </style>
 <footer> 
     <div class="rod">
-       <img src="../img/infologo.jpg" alt="Informações" class="logorod">
+       <img src="img/infologo.jpg" alt="Informações" class="logorod">
     </div>
     <div class="inf">
         <div class="num">
