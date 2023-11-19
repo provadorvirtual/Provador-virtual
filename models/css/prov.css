@@ -35,9 +35,6 @@ body{
     display: flex;
     flex-flow: column wrap;
 }
-.provador{
-    margin-top: 5%;
-}
 .roupas{
     margin-top: 25px;
     display: flex;
@@ -45,8 +42,8 @@ body{
     justify-content: space-around;
     text-align: center;
 }
-@media (max-width: 800px) {
-    .flex-container {
+@media (max-width: 630px) {
+    .roupas{
       flex-direction: column;
     }
 }
