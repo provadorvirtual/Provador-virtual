@@ -60,9 +60,6 @@
        <img src="../img/infologo.jpg" alt="Informações" class="logorod">
     </div>
     <div class="controls">
-        <div>Roll: <input id="roll" value="20" size="3" class="number"> degrees</div>
-        <div>Pitch: <input id="pitch" value="0" size="3" class="number"> degrees</div>
-        <div>Yaw: <input id="yaw" value="0" size="3" class="number"> degrees</div>
         <div>
           Scale: X: <input id="x" value="1" size="3" class="number">,
           Y: <input id="y" value="1" size="3" class="number">,
@@ -73,9 +70,6 @@
     </model-viewer>
     <script>
     const modelViewerTransform = document.querySelector("model-viewer#flamengo22-23");
-    const roll = document.querySelector('#roll');
-    const pitch = document.querySelector('#pitch');
-    const yaw = document.querySelector('#yaw');
     const x = document.querySelector('#x');
     const y = document.querySelector('#y');
     const z = document.querySelector('#z');
@@ -85,23 +79,9 @@
       modelViewerTransform.updateFraming();
     });
     
-    const updateOrientation = () => {
-      modelViewerTransform.orientation = `${roll.value}deg ${pitch.value}deg ${yaw.value}deg`;
-    };
-    
     const updateScale = () => {
       modelViewerTransform.scale = `${x.value} ${y.value} ${z.value}`;
     };
-    
-    roll.addEventListener('input', () => {
-      updateOrientation();
-    });
-    pitch.addEventListener('input', () => {
-      updateOrientation();
-    });
-    yaw.addEventListener('input', () => {
-      updateOrientation();
-    });
     x.addEventListener('input', () => {
       updateScale();
     });
