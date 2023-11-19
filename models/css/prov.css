@@ -39,9 +39,14 @@ body{
 .roupas{
     margin-top: 25px;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    flex-direction: column;
     text-align: center;
+}
+@media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
 }
 .fla, .cr, .nirv{
     display: flex;
