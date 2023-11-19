@@ -72,9 +72,9 @@
     </div>
     <div class="controls">
         <div>
-          Scale: X: <input id="x" value="1" size="3" class="number">,
-          Y: <input id="y" value="1" size="3" class="number">,
-          Z: <input id="z" value="1" size="3" class="number">
+          Scale: X: <input id="x" value="1.7" size="3" class="number">,
+          Y: <input id="y" value="1.7" size="3" class="number">,
+          Z: <input id="z" value="1.7" size="3" class="number">
         </div>
         <button id="frame">Update Framing</button>
       </div>
@@ -91,7 +91,7 @@
     });
     
     const updateScale = () => {
-      modelViewerTransform.scale = `${0.7} ${0.7} ${0.7}`;
+      modelViewerTransform.scale = `${x.value} ${y.value} ${z.value}`;
     };
     x.addEventListener('input', () => {
       updateScale();
