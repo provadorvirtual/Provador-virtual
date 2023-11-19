@@ -72,10 +72,16 @@
           Escalas (M): Cintura: <input id="x" value="1.7" size="3" class="number">,
           Altura: <input id="y" value="1.7" size="3" class="number">,
           Comprimento da barriga: <input id="z" value="1.7" size="3" class="number">
+          <button id="frame">Padrão</button><style>#frame{border-radius: 10px; border: none;}</style>
         </div>
-        <button id="frame">Padrão</button><style>#frame{border-radius: 10px; border: none;}</style>
     </div>
-    <style>#x, #y, #z{border: none; border-radius: 10px;} .constrols{display: flex;margin-right: 5px;}</style>
+    <style>#x, #y, #z{border: none; border-radius: 10px;} .constrols{display: flex;margin-right: 5px;position: absolute;
+
+        top: 50%;
+        
+        left: 50%;
+        
+        transform: translate(-50%, -50%);}</style>
     <script>
     const modelViewerTransform = document.querySelector("model-viewer#flamengo22-23", "model-viewer#NIRVANA", "model-viewer#CR7-Homenagem");
     const x = document.querySelector('#x');
