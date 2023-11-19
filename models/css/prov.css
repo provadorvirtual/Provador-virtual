@@ -15,6 +15,7 @@ body{
     border-bottom-right-radius: 10px;
     position: absolute;
     top: 0;
+    margin-bottom: 15px;
 }
 .mn{
     text-decoration: none;
@@ -39,6 +40,7 @@ body{
     margin-top: 25px;
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
     text-align: center;
 }
 .fla, .cr, .nirv{
