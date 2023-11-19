@@ -35,8 +35,8 @@
    </div>
 <div class="provador"> 
 <model-viewer id="flamengo22-23" class="provador-virtual" camera-target="0m 330m 600.8m" src="roupas/flamengo.gltf" camera-controls touch-action="pan-y"></model-viewer>
-<model-viewer id="NIRVANA" class="provador-virtual" camera-target="0m 330m 600.8m" src="roupas/modelopadrao.zip" camera-controls touch-action="pan-y"></model-viewer>
-<model-viewer id="CR7-Homenagem" class="provador-virtual" camera-target="0m 330m 600.8m" src="roupas/cristianohomenagem.gltf" camera-controls touch-action="pan-y"></model-viewer>
+<model-viewer id="NIRVANA" class="provador-virtual" src="roupas/modelopadrao.zip" camera-controls touch-action="pan-y"></model-viewer>
+<model-viewer id="CR7-Homenagem" class="provador-virtual" src="roupas/cristianohomenagem.gltf" camera-controls touch-action="pan-y"></model-viewer>
 <!--funcionamento basico - nao altere nada aqui - nao cite o ID de qualquer modelviewer, apenas sua classe-->
 <style>#flamengo22-23{display: none;}#NIRVANA{display: none;}#CR7-Homenagem{display: none;}</style>
 <style>#flamengo22-23:target{display: block;}#NIRVANA:target{display: block;}#CR7-Homenagem:target{display: block;}</style>
@@ -73,11 +73,14 @@
           Altura: <input id="y" value="1.7" size="3" class="number">,
           Comprimento da barriga: <input id="z" value="1.7" size="3" class="number">
         </div>
-        <button id="frame">Padrão</button><style>#frame{border-radius: 10px; border: none;}</style>
+        <div class="button-dad">
+        <button id="frame">Padrão</button><style>#frame{border-radius: 10px; border: none;color: aliceblue;}#frame:hover{color: springgreen;}</style>
+        </div>
+        <style>.button-dad{display: flex;justify-content: center;align-items: center;}</style>
     </div>
     <style>#x, #y, #z{border: none; border-radius: 10px;} .constrols{display: flex;margin-right: 5px;}</style>
     <script>
-    const modelViewerTransform = document.querySelector("model-viewer#flamengo22-23",);
+    const modelViewerTransform = document.querySelector("model-viewer#flamengo22-23");
     const x = document.querySelector('#x');
     const y = document.querySelector('#y');
     const z = document.querySelector('#z');
