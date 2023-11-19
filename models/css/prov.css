@@ -16,6 +16,8 @@ body{
     position: absolute;
     top: 0;
     margin-bottom: 15px;
+    z-index: 1;
+    content: '';
 }
 .mn{
     text-decoration: none;
