@@ -34,9 +34,9 @@
     </div>
    </div>
 <div class="provador"> 
-<model-viewer id="flamengo22-23" class="provador-virtual" camera-target="2.063m 170m 702.8m" src="roupas/flamengo.gltf" camera-controls touch-action="pan-y"></model-viewer>
-<model-viewer id="NIRVANA" class="provador-virtual" camera-target="2.063m 170m 702.8m" src="roupas/modelopadrao.zip" camera-controls touch-action="pan-y"></model-viewer>
-<model-viewer id="CR7-Homenagem" class="provador-virtual" camera-target="2.063m 170m 702.8m" src="roupas/cristianohomenagem.gltf" camera-controls touch-action="pan-y"></model-viewer>
+<model-viewer id="flamengo22-23" class="provador-virtual" camera-target="0m 330m 600.8m" src="roupas/flamengo.gltf" camera-controls touch-action="pan-y"></model-viewer>
+<model-viewer id="NIRVANA" class="provador-virtual" camera-target="0m 330m 600.8m" src="roupas/modelopadrao.zip" camera-controls touch-action="pan-y"></model-viewer>
+<model-viewer id="CR7-Homenagem" class="provador-virtual" camera-target="0m 330m 600.8m" src="roupas/cristianohomenagem.gltf" camera-controls touch-action="pan-y"></model-viewer>
 <!--funcionamento basico - nao altere nada aqui - nao cite o ID de qualquer modelviewer, apenas sua classe-->
 <style>#flamengo22-23{display: none;}#NIRVANA{display: none;}#CR7-Homenagem{display: none;}</style>
 <style>#flamengo22-23:target{display: block;}#NIRVANA:target{display: block;}#CR7-Homenagem:target{display: block;}</style>
@@ -71,16 +71,16 @@
        <img src="../img/infologo.jpg" alt="Informações" class="logorod">
     </div>
     <div class="controls">
-        <div>
-          Scale: X: <input id="x" value="1.7" size="3" class="number">,
-          Y: <input id="y" value="1.7" size="3" class="number">,
-          Z: <input id="z" value="1.7" size="3" class="number">
+        <div style="margin: 0 auto;">
+          Escalas (M): Cintura: <input id="x" value="1.7" size="3" class="number">,
+          Altura: <input id="y" value="1.7" size="3" class="number">,
+          Comprimento da barriga: <input id="z" value="1.7" size="3" class="number">
         </div>
-        <button id="frame">Update Framing</button>
+        <button id="frame">Padrão</button>
       </div>
-    </model-viewer>
+      <style>#x, #y, #z{border: none; border-radius: 20px;}</style>
     <script>
-    const modelViewerTransform = document.querySelector("model-viewer#flamengo22-23");
+    const modelViewerTransform = document.querySelector("model-viewer#flamengo22-23", "model-viewer#NIRVANA", "model-viewer#CR7-Homenagem");
     const x = document.querySelector('#x');
     const y = document.querySelector('#y');
     const z = document.querySelector('#z');
