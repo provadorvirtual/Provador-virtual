@@ -492,10 +492,13 @@ footer{
     border-radius: 20px;
     justify-content: space-between;
     text-align: center;
-    margin-left: 2px;
+    margin-bottom: 10px;
 }
 .aviso-txt{
-    font-size: 5vw;
+    font-size: 3vw;
+}
+.aviso-close{
+    margin-top: 50%;
 }
 @media (max-width: 500px){
     .aviso{
