@@ -484,12 +484,18 @@ footer{
 }
 .aviso{
     display: none;
+    color: aliceblue;
     margin: 0px 2.5% 0px 2.5%;
     width: 85%;
     height: 70px;
     background-color: rgba(249, 38, 38, 0.644);
     border-radius: 20px;
     justify-content: space-between;
+    text-align: center;
+    margin-left: 2px;
+}
+.aviso-txt{
+    font-size: 5vw;
 }
 @media (max-width: 500px){
     .aviso{

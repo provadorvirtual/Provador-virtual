@@ -1,6 +1,6 @@
 const menuShow = document.querySelector(".respnav-btn-show");
 const menuClose = document.querySelector(".respnav-btn-close");
-const menuBkg = document.querySelector(".respnav-bkg")
+const menuBkg = document.querySelector(".respnav-bkg");
 menuShow.addEventListener("click", function(){
     menuBkg.style.display = "block";
     menuShow.style.display = "none";
@@ -24,3 +24,8 @@ bolhasong.addEventListener("click", function(){
     audio2.play()
 });
 
+const avisoClose = document.querySelector(".aviso-close");
+const Aviso = document.querySelector(".aviso")
+avisoClose.addEventListener("click", function(){
+    Aviso.style.display = 'none';
+});
