@@ -78,6 +78,7 @@
         </div>
         <div class="button-dad">
         <button id="frame">Padrão</button><style>#frame{border-radius: 10px; border: none;}#frame:hover{background-color: springgreen;}</style>
+        <button class="verify" id="frame">Verificar</button>
         </div>
         <style>.button-dad{display: flex;justify-content: center;align-items: center;}</style>
     </div>
@@ -105,6 +106,17 @@
     z.addEventListener('input', () => {
       updateScale();
     });
+    const VerifyBtn = document.querySelector(".verify");
+    let tamanho = "O tamanho recomendado para você é P"
+    VerifyBtn.addEventListener("click", function(){
+        if(x.value, y.value, z.value = 1.7 || x.value, y.value, z.value = 1.8){
+            tamanho = "O tamanho recomendado para você é M";
+        }
+        else if(x.value, y.value, z.value >= 1.9){
+            tamanho = "O tamanho recomendado para você é G";
+        };
+    });
+    console.log(tamanho)
     </script>
 </div>
 <h1 class="textoh1">Outras Roupas</h1><style>.textoh1{color: aliceblue; text-align: center;}</style>
