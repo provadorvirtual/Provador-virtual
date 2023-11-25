@@ -482,3 +482,12 @@ footer{
         align-items: center;
     }
 }
+.aviso{
+
+    margin-left: 13px;
+    width: 85%;
+    height: 70px;
+    background-color: rgba(249, 38, 38, 0.644);
+    border-radius: 20px;
+    justify-content: space-between;
+}
