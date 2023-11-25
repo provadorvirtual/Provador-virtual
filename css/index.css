@@ -483,11 +483,16 @@ footer{
     }
 }
 .aviso{
-
-    margin-left: 13px;
+    display: none;
+    margin: 0px 2.5% 0px 2.5%;
     width: 85%;
     height: 70px;
     background-color: rgba(249, 38, 38, 0.644);
     border-radius: 20px;
     justify-content: space-between;
+}
+@media (max-width: 500px){
+    .aviso{
+        display: flex;
+    }
 }
