@@ -486,7 +486,7 @@ footer{
     display: none;
     color: aliceblue;
     margin: 0px 2.5% 0px 2.5%;
-    width: 85%;
+    width: 95%;
     height: 70px;
     background-color: rgba(249, 38, 38, 0.644);
     border-radius: 20px;
@@ -496,9 +496,12 @@ footer{
 }
 .aviso-txt{
     font-size: 3vw;
+    margin-top: 10px;
 }
 .aviso-close{
-    margin-top: 50%;
+    margin-top: 10px;
+    margin-right: 5px;
+    width: 20px;
 }
 @media (max-width: 500px){
     .aviso{
