@@ -4,7 +4,7 @@ const menuBkg = document.querySelector(".respnav-bkg");
 menuShow.addEventListener("click", function(){
     menuBkg.style.display = "block";
     menuShow.style.display = "none";
-    menuClose.style.display = "block"
+    menuClose.style.display = "block";
 });
 menuClose.addEventListener("click", function(){
     menuBkg.style.display = "none";
