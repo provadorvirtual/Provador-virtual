@@ -108,14 +108,17 @@
     });
     const VerifyBtn = document.querySelector(".verify");
     VerifyBtn.addEventListener("click", function(){
+        let xv = x.value;
+        let yv = y.value;
+        let zv = z.value;
         let tamanho = "O tamanho recomendado para você é P"
-        if(x.value, y.value, z.value == 1.7 || x.value, y.value, z.value == 1.8){
+        if(xv, yv, zv == 1.7 || xv, yv, zv == 1.8){
             tamanho = "O tamanho recomendado para você é M";
         }
-        if(x.value, y.value, z.value >= 1.9){
+        else if(xv, yv, zv >= 1.9){
             tamanho = "O tamanho recomendado para você é G";
         };
-        console.log(tamanho)
+        console.write(tamanho)
     });
     </script>
 </div>
