@@ -29,3 +29,41 @@ const Aviso = document.querySelector(".aviso")
 avisoClose.addEventListener("click", function(){
     Aviso.style.display = 'none';
 });
+
+
+  //Classes que redirecionam
+const classes = ['Flamengo', 'Nirvana', 'Japão', ' Calça Jooger Nike', 'Polo Nike', 'Vestido Colado', 'Vestido Azul', 'Bermuda Adidas'];
+
+const searchInput = document.getElementById('search');
+const suggestionsContainer = document.getElementById('suggestions');
+
+ 
+searchInput.addEventListener('input', function() {
+    const searchString = this.value.toLowerCase();
+    const filteredClasses = classes.filter(className =>
+      className.toLowerCase().includes(searchString)
+    );
+
+if (filteredClasses.length > 0 && searchString !== '') {
+      suggestionsContainer.innerHTML = '';
+      filteredClasses.forEach(className => {
+        const link = document.createElement('a');
+        link.href = `#${className}`;
+        link.textContent = className;
+        suggestionsContainer.appendChild(link);
+      });
+      suggestionsContainer.style.display = 'block';
+    } else {
+      suggestionsContainer.style.display = 'none';
+    }
+  });
+
+suggestionsContainer.addEventListener('click', function(event) {
+    if (event.target.tagName === 'A') {
+      const targetSection = document.getElementById(event.target.textContent);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+      suggestionsContainer.style.display = 'none';
+    }
+  });
