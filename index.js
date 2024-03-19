@@ -1,3 +1,29 @@
+//BD firebase 
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyANoj1dFcRg_AkkRN8XGTPeXsgnRJRCfN0",
+    authDomain: "provador-v.firebaseapp.com",
+    databaseURL: "https://provador-v-default-rtdb.firebaseio.com",
+    projectId: "provador-v",
+    storageBucket: "provador-v.appspot.com",
+    messagingSenderId: "798514586212",
+    appId: "1:798514586212:web:225b4bd9ea03ba3e52b571",
+    measurementId: "G-L6Q0P31LLS"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
 const menuShow = document.querySelector(".respnav-btn-show");
 const menuClose = document.querySelector(".respnav-btn-close");
 const menuBkg = document.querySelector(".respnav-bkg");
