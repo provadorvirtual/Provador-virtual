@@ -91,3 +91,5 @@ suggestionsContainer.addEventListener('click', function(event) {
       suggestionsContainer.style.display = 'none';
     }
   });
+
+
