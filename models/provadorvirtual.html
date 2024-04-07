@@ -20,11 +20,18 @@
     <meta name="theme-color" content="#ffffff">
     <!--Favicon end-->
     <!--API-->
+    <script src="api.ts"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.js"
     crossorigin="anonymous"></script>
 </head>
 <body>
-   
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="abRLMxN" data-user="mediapipe-preview" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <span>See the Pen <a href="https://codepen.io/mediapipe-preview/pen/abRLMxN">
+        MediaPipe Pose Landmarker Task for web</a> by MediaPipe Preview (<a href="https://codepen.io/mediapipe-preview">@mediapipe-preview</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+    
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
 <div class="todo">
 <div class="menu">
@@ -142,20 +149,6 @@
          <a class="seletor" id="escolhas" href="#NIRVANA">Blusa NIRVANA</a>
      </div>
 </div>
-<script>
-const vision = await FilesetResolver.forVisionTasks(
-  // path/to/wasm/root
-  "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/wasm"
-);
-const poseLandmarker = await poseLandmarker.createFromOptions(
-    vision,
-    {
-      baseOptions: {
-        modelAssetPath: "path/to/model"
-      },
-      runningMode: runningMode
-    });
-</script>
 
 </body>
 </html>
