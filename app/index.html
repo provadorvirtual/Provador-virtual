@@ -27,21 +27,33 @@ limitations under the License. -->
 
 <body>
   <h1>Detector de Pose</h1>
+  <input type="file" id="inputFile">
 
+<script>
+document.getElementById('inputFile').addEventListener('change', function(event) {
+    const file = event.target.files[0]; // Obter o primeiro arquivo selecionado
+    if (file) {
+        const reader = new FileReader(); // Criar um FileReader para ler o conteúdo do arquivo
+        reader.onload = function(e) {
+            const imageSrc = e.target.result; // Obter o URL da imagem carregada
+            const imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = imageSrc; // Definir o atributo 'src' da tag img para o URL da imagem
+            document.getElementById('imageContainer').style.display = 'block'; // Exibir a div que contém a imagem
+        };
+        reader.readAsDataURL(file); // Ler o arquivo como um URL de dados
+    }
+});
+</script>
   <section id="demos" class="invisible">
-    <h2>Exemplos</h2>
-    <p><b>Click na imagem</p>
+    <p><b>Agora Clicke na imagem</p>
 
     <div class="detectOnClick">
-      <!-- source: https://pixabay.com/photos/woman-asia-beautiful-cambodia-1822514/ -->
-      <img src="https://assets.codepen.io/9177687/woman-ge0f199f92_640.jpg" width="100%" crossorigin="anonymous" title="Click to get detection!" />
-    </div>
-    <div class="detectOnClick">
-      <!-- source: https://pixabay.com/photos/woman-relaxation-portrait-3053489/ -->
-      <img src="https://assets.codepen.io/9177687/woman-g1af8d3deb_640.jpg" width="100%" crossorigin="anonymous" title="Click to get detection!" />
+      <div id="imageContainer">
+        <img id="imagePreview" src="#" alt="Imagem Selecionada">
+      </div>
     </div>
 
-    <h2>Exemplo 2: Webcam detection</h2>
+    <h2>Exemplo: Webcam detection</h2>
     <p>fique em frente a camera</p>
 
     <div id="liveView" class="videoView">
