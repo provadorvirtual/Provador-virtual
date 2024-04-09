@@ -18,71 +18,80 @@
     <script src="../index.js" defer></script>
 </head>
 <body>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-          apiKey: "AIzaSyAVxBVBILR5NknA76FaeaOXVdYEpNqtJrY",
-          authDomain: "login-7d3fd.firebaseapp.com",
-          projectId: "login-7d3fd",
-          storageBucket: "login-7d3fd.appspot.com",
-          messagingSenderId: "141380219248",
-          appId: "1:141380219248:web:1d481b00615f7ad7aadfb5"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth();
-        const provider = new GoogleAuthProvider();
+    <button id="signInButton">Create Account / Sign In</button>
+    <button id="signOutButton">Sign Out</button>
 
-        const signInButton = document.getElementById("signInButton")
-        const userSignIn = async() => {
-            signInWithPopup(auth, provider)
-            .then((result) => {
-                const user = result.user
-                console.log(user);
-            }).catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message
-        })
+    <div id="message">
+        <p>You have signed in as <span id="userName"></span> with the email <span id="userEmail"></span> </p>
+    </div>
+
+    <script type="module">
+  
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+ 
+
+  import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+  
+  // Add your own Firebase config here
+  const firebaseConfig = {
+    apiKey: "AIzaSyAVxBVBILR5NknA76FaeaOXVdYEpNqtJrY",
+    authDomain: "login-7d3fd.firebaseapp.com",
+    projectId: "login-7d3fd",
+    storageBucket: "login-7d3fd.appspot.com",
+    messagingSenderId: "141380219248",
+    appId: "1:141380219248:web:1d481b00615f7ad7aadfb5"
+  };
+
+
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider()
+
+  const signInButton = document.getElementById("signInButton");
+  const signOutButton = document.getElementById("signOutButton");
+  const message = document.getElementById("message");
+  const userName = document.getElementById("userName");
+  const userEmail = document.getElementById("userEmail");
+
+  signOutButton.style.display = "none";
+  message.style.display = "none";
+
+  const userSignIn = async() => {
+    signInWithPopup(auth, provider)
+    .then((result) => {
+        const user = result.user
+        console.log(user);
+    }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message
+    })
+  }
+
+  const userSignOut = async() => {
+    signOut(auth).then(() => {
+        alert("You have signed out successfully!");
+    }).catch((error) => {})
+  }
+
+  onAuthStateChanged(auth, (user) => {
+    if(user) {
+      signOutButton.style.display = "block";
+      message.style.display = "block";
+      userName.innerHTML = user.displayName;
+      userEmail.innerHTML = user.email
+    } else {
+      signOutButton.style.display = "none";
+      message.style.display = "none";
     }
+  })
 
   signInButton.addEventListener('click', userSignIn);
-      </script>
-<div class="pgn">
-    <header>
-        <nav>
-            <div class="provador-title">
-                <h1>Provador Virtual</h1>
-            </div>
-            <div class="pj-logo">
-                <img class="logo" src="../img/3D/banner3d.png" alt="Provador Virtual" width="300">
-            </div>
-        </nav>
-    </header>
-    <div class="page">
-        <form method="post" class="formLogin" action="https://provadorvirtual.netlify.app/">
-            <h1 class="titleh1">Login</h1><style>.titleh1{color: aliceblue;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}</style>
-            <p class="ptext">Via Gmail Google </p><style>.ptext{color: aliceblue;margin: 2px;}</style>
-            <button type="button" class="btn btn-danger" id="signInButton">Google Login</button>
-            <a class="senhaout" href="esqueci.html">Esqueci minha senha</a><br>
-            <style>.senhaout{text-decoration: none;font-family: monospace;color: rgb(234, 52, 52);}</style>
-            <input class="entrarbtn" type="submit" value="Entrar ➔" id="btnLogin"/>
-            <style>.entrarbtn{margin-bottom: 10px; border-radius: 30px;cursor: pointer; width: 100px;height: 25px;margin-top: 10px;margin-left: 10px; background-color: rgb(21, 68, 255);color: #fff;border: none;}</style>
-            <br><a href="cadastros/tprincipal.html" class="cadpill">Não tem conta? Cadastre-se ➔</a>
-        </form>
-    </div>
-</div>
-</body>
+  signOutButton.addEventListener('click', userSignOut);
 
-<script>
-    
+
 
 </script>
+</body>
 
 </html>
