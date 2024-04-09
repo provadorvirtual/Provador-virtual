@@ -41,6 +41,18 @@
         const provider = new GoogleAuthProvider();
 
         const signInButton = document.getElementById("signInButton")
+        const userSignIn = async() => {
+            signInWithPopup(auth, provider)
+            .then((result) => {
+                const user = result.user
+                console.log(user);
+            }).catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message
+        })
+    }
+
+  signInButton.addEventListener('click', userSignIn);
       </script>
 <div class="pgn">
     <header>
@@ -54,13 +66,13 @@
         </nav>
     </header>
     <div class="page">
-        <form method="post" class="formLogin" action="../index.html">
+        <form method="post" class="formLogin" action="https://provadorvirtual.netlify.app/">
             <h1 class="titleh1">Login</h1><style>.titleh1{color: aliceblue;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}</style>
             <p class="ptext">Via Gmail Google </p><style>.ptext{color: aliceblue;margin: 2px;}</style>
             <button type="button" class="btn btn-danger" id="signInButton">Google Login</button>
             <a class="senhaout" href="esqueci.html">Esqueci minha senha</a><br>
             <style>.senhaout{text-decoration: none;font-family: monospace;color: rgb(234, 52, 52);}</style>
-            <input class="entrarbtn" type="submit" value="Entrar ➔" id="btnLogin" />
+            <input class="entrarbtn" type="submit" value="Entrar ➔" id="btnLogin"/>
             <style>.entrarbtn{margin-bottom: 10px; border-radius: 30px;cursor: pointer; width: 100px;height: 25px;margin-top: 10px;margin-left: 10px; background-color: rgb(21, 68, 255);color: #fff;border: none;}</style>
             <br><a href="cadastros/tprincipal.html" class="cadpill">Não tem conta? Cadastre-se ➔</a>
         </form>
