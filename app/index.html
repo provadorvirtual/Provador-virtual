@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - MediaPipe Pose Landmarker Task for web</title>
+  <title>MediaPipe</title>
   <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -26,11 +26,11 @@ limitations under the License. -->
 </script>
 
 <body>
-  <h1>Pose detection using the MediaPipe PoseLandmarker task</h1>
+  <h1>Detector de Pose</h1>
 
   <section id="demos" class="invisible">
-    <h2>Demo: Detecting Images</h2>
-    <p><b>Click on an image below</b> to see the key landmarks of the body.</p>
+    <h2>Exemplos</h2>
+    <p><b>Click na imagem</p>
 
     <div class="detectOnClick">
       <!-- source: https://pixabay.com/photos/woman-asia-beautiful-cambodia-1822514/ -->
@@ -41,13 +41,13 @@ limitations under the License. -->
       <img src="https://assets.codepen.io/9177687/woman-g1af8d3deb_640.jpg" width="100%" crossorigin="anonymous" title="Click to get detection!" />
     </div>
 
-    <h2>Demo: Webcam continuous pose landmarks detection</h2>
-    <p>Stand in front of your webcam to get real-time pose landmarker detection.</br>Click <b>enable webcam</b> below and grant access to the webcam if prompted.</p>
+    <h2>Exemplo 2: Webcam detection</h2>
+    <p>fique em frente a camera</p>
 
     <div id="liveView" class="videoView">
       <button id="webcamButton" class="mdc-button mdc-button--raised">
         <span class="mdc-button__ripple"></span>
-        <span class="mdc-button__label">ENABLE WEBCAM</span>
+        <span class="mdc-button__label">Autorizar WEBCAM</span>
       </button>
       <div style="position: relative;">
         <video id="webcam" style="width: 1280px; height: 720px; position: abso" autoplay playsinline></video>
