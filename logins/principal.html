@@ -18,6 +18,30 @@
     <script src="../index.js" defer></script>
 </head>
 <body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyAVxBVBILR5NknA76FaeaOXVdYEpNqtJrY",
+          authDomain: "login-7d3fd.firebaseapp.com",
+          projectId: "login-7d3fd",
+          storageBucket: "login-7d3fd.appspot.com",
+          messagingSenderId: "141380219248",
+          appId: "1:141380219248:web:1d481b00615f7ad7aadfb5"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const provider = new GoogleAuthProvider();
+
+        const signInButton = document.getElementById("signInButton")
+      </script>
 <div class="pgn">
     <header>
         <nav>
@@ -32,11 +56,8 @@
     <div class="page">
         <form method="post" class="formLogin" action="../index.html">
             <h1 class="titleh1">Login</h1><style>.titleh1{color: aliceblue;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}</style>
-            <p class="ptext">Digite os seus dados de acesso nos campos abaixo.</p><style>.ptext{color: aliceblue;margin: 2px;}</style>
-            <label for="email">E-mail</label><br><style>label{color: antiquewhite;font-family: cookie;}</style>
-            <input class="inputs" type="email" placeholder="Digite Seu E-mail" autofocus="true" /><br>
-            <label for="password">Senha</label><br>
-            <input class="inputs" type="password" placeholder="Digite Sua Senha" /><br>
+            <p class="ptext">Via Gmail Google </p><style>.ptext{color: aliceblue;margin: 2px;}</style>
+            <button type="button" class="btn btn-danger" id="signInButton">Google Login</button>
             <a class="senhaout" href="esqueci.html">Esqueci minha senha</a><br>
             <style>.senhaout{text-decoration: none;font-family: monospace;color: rgb(234, 52, 52);}</style>
             <input class="entrarbtn" type="submit" value="Entrar ➔" id="btnLogin" />
