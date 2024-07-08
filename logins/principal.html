@@ -18,11 +18,47 @@
     <script src="../index.js" defer></script>
 </head>
 <body>
-    <button id="signInButton">Create Account / Sign In</button>
-    <button id="signOutButton">Sign Out</button>
-    <div id="message">
-        <p>You have signed in as <span id="userName"></span> with the email <span id="userEmail"></span> </p>
+    <div class="pgn">
+  <header>
+      <nav>
+       <div class="pj-logo">
+           <img class="logo" src="../img/cbd.png" alt="Provador Virtual" width="300">
+       </div>
+      </nav>
+      <div class="provador">
+          <h1 style="color: white;">Provador Virtual</h1>
+      </div>
+  </header>
+  <div class="login">
+      <form class="f" action="../logins/principal.html">
+          <div class="titulo">
+              <h3 style="color: antiquewhite;">Login</h3>
+           </div>
+           <label for="email">E-mail</label><br>
+               <input type="email" class="b" placeholder='Digite seu e-mail' maxlength="50" size="40"><br>
+               <br>
+               
+          <div class="show">
+           <label for="a">Senha</label><br>
+               <input type="password" class="b" placeholder='12345678' maxlength="8" size="40"><br>
+           <label for="b" >Confirmar senha</label><br>
+               <input type="password" class="b" placeholder='12345678' maxlength="8" size="40"><br>
+           <label for="c" >Usuário</label><br>
+               <input type="text" class="b" placeholder='seu usuário' maxlength="12" size="40"><br>
+              <br>
+              <button class="fire" id="signInButton">Criar/Entrar com firebase</button>
+              <button id="signOutButton">Deslogar</button>
+              <div id="message">
+              <p>Você entrou como <span id="userName"></span> seu email <span id="userEmail"></span> </p> <br>
     </div>
+  </label>
+              <div class="bt" >
+               <input class="b enter" type="submit" placeholder='Entrar' formaction="../index.html"><br>
+              </div>
+          </div>
+      </form>
+  </div>
+</div>
 
     <script type="module">
   
