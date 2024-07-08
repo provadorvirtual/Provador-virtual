@@ -15,6 +15,51 @@ body{
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+.pj-logo, .titulo{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.provador{
+    display: flex;
+    justify-content: center;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+}
+.nova{
+    text-decoration: none;
+}
+.b{
+    border: 3px rgb(47, 79, 79) solid;
+    border-radius: 10px;
+}
+.enter{
+    font-size: 20px;
+    padding: 5px;
+    background-color: cyan;
+}
+.enter:hover{
+    padding: 6px;
+}
+.bt, .btr{
+    display: flex;
+    justify-content: center;
+}
+.enviarbtn{
+    padding: 3px;
+    background-color: cyan; 
+    text-decoration: none;
+    color: black;
+    border: 3px solid rgb(47, 79, 79);
+    border-radius: 10px;
+}
+.fire{
+    margin-left: 24%;
+    margin-bottom: 4%;
+}
 @media (max-width: 825px){
     .pgn{
         margin: 1vw 15vw 0px 15vw;
