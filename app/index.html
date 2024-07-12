@@ -36,8 +36,7 @@ document.getElementById('inputFile').addEventListener('change', function(event) 
         const reader = new FileReader(); // Criar um FileReader para ler o conteúdo do arquivo
         reader.onload = function(e) {
             const imageSrc = e.target.result; // Obter o URL da imagem carregada
-            const imagePreview = document.getElementById('imagePreview');
-            imagePreview.src = imageSrc; // Definir o atributo 'src' da tag img para o URL da imagem
+
             document.getElementById('imageContainer').style.display = 'block'; // Exibir a div que contém a imagem
         };
         reader.readAsDataURL(file); // Ler o arquivo como um URL de dados
@@ -45,7 +44,7 @@ document.getElementById('inputFile').addEventListener('change', function(event) 
 });
 </script>
   <section id="demos" class="invisible">
-    <p><b>Agora Clicke na imagem</p>
+    <p><b>Click na imagem</p>
 
     <div class="detectOnClick">
       <div id="imageContainer">
