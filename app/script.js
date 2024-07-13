@@ -88,10 +88,10 @@ async function handleClick(event) {
             });
             drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
         }
+        console.log(drawingUtils)
     });
     
 }
-console.log('alguem na escuta dessa porra?')
 /********************************************************************
 // Demo 2: Continuously grab image from webcam stream and detect it.
 ********************************************************************/
