@@ -89,8 +89,8 @@ async function handleClick(event) {
             });
             drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
         }
-        console.log(PoseLandmarkerResult)
     });
+    console.log(PoseLandmarkerResult)
 }
 
 /********************************************************************
