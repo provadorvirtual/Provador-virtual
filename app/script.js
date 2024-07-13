@@ -10,7 +10,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-import { PoseLandmarker, FilesetResolver, DrawingUtils, pose } from "https://cdn.skypack.dev/@mediapipe/tasks-vision@0.10.0";
+import { PoseLandmarker, FilesetResolver, DrawingUtils } from "https://cdn.skypack.dev/@mediapipe/tasks-vision@0.10.0";
 const demosSection = document.getElementById("demos");
 let poseLandmarker = undefined;
 let runningMode = "IMAGE";
@@ -88,37 +88,8 @@ async function handleClick(event) {
             });
             drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
         }
+    return result
     });
-    // Suponha que 'pose' seja o array de objetos com as coordenadas da pose estimada
-
-// Função para calcular a distância entre dois pontos
-function calcularDistancia(ponto1, ponto2) {
-    const dx = ponto1.x - ponto2.x;
-    const dy = ponto1.y - ponto2.y;
-    return Math.sqrt(dx * dx + dy * dy);
-}
-
-// Função para encontrar o índice de um ponto específico
-function encontrarIndiceDoPonto(pose, nomeDoPonto) {
-    for (let i = 0; i < pose.length; i++) {
-        if (pose[i].name === nomeDoPonto) {
-            return i;
-        }
-    }
-    return -1; // Se o ponto não for encontrado na pose
-}
-
-// Supondo que você queira calcular a distância entre ombro esquerdo (Left Shoulder) e cotovelo esquerdo (Left Elbow)
-const ombroEsquerdoIndice = encontrarIndiceDoPonto(pose, "Left Shoulder");
-const cotoveloEsquerdoIndice = encontrarIndiceDoPonto(pose, "Left Elbow");
-
-if (ombroEsquerdoIndice !== -1 && cotoveloEsquerdoIndice !== -1) {
-    const distancia = calcularDistancia(pose[ombroEsquerdoIndice], pose[cotoveloEsquerdoIndice]);
-    console.log("Distância entre ombro esquerdo e cotovelo esquerdo:", distancia);
-} else {
-    console.log("Ponto(s) não encontrado(s) na pose.");
-}
-
 }
 /********************************************************************
 // Demo 2: Continuously grab image from webcam stream and detect it.
