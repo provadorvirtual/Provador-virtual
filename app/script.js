@@ -90,9 +90,8 @@ async function handleClick(event) {
             drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
         }
     });
-    console.log(PoseLandmarkerResult)
 }
-
+console.log(PoseLandmarkerResult)
 /********************************************************************
 // Demo 2: Continuously grab image from webcam stream and detect it.
 ********************************************************************/
