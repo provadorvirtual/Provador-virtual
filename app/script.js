@@ -163,3 +163,4 @@ async function predictWebcam() {
         window.requestAnimationFrame(predictWebcam);
     }
 }
+console.log(PoseLandmarker[11, 12])
