@@ -10,6 +10,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+import { PoseLandmarkerResult } from "@mediapipe/tasks-vision";
 import { PoseLandmarker, FilesetResolver, DrawingUtils } from "https://cdn.skypack.dev/@mediapipe/tasks-vision@0.10.0";
 const demosSection = document.getElementById("demos");
 let poseLandmarker = undefined;
@@ -88,8 +89,10 @@ async function handleClick(event) {
             });
             drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
         }
+        console.log(PoseLandmarkerResult)
     });
 }
+
 /********************************************************************
 // Demo 2: Continuously grab image from webcam stream and detect it.
 ********************************************************************/
