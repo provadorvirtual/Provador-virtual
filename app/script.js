@@ -91,6 +91,7 @@ async function handleClick(event) {
     });
     
 }
+console.log('alguem na escuta dessa porra?')
 /********************************************************************
 // Demo 2: Continuously grab image from webcam stream and detect it.
 ********************************************************************/
@@ -164,4 +165,3 @@ async function predictWebcam() {
         window.requestAnimationFrame(predictWebcam);
     }
 }
-console.log(poseLandmarker)
