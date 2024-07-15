@@ -87,9 +87,9 @@ async function handleClick(event) {
                 radius: (data) => DrawingUtils.lerp(data.from.z, -0.15, 0.1, 5, 1)
             });
             drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
-            console.log(landmark[11,12])
-            let med_ombro_esquerdo = landmark(x)[11] * parseInt(canvas.width)
-            let med_ombro_direito = landmark(x)[12] * parseInt(canvas.width)
+            console.log(landmark[11, 12])
+            let med_ombro_esquerdo = landmark[11][0] * parseInt(canvas.width)
+            let med_ombro_direito = landmark[12][0] * parseInt(canvas.width)
             console.log(med_ombro_esquerdo - med_ombro_direito)
         }
         console.log(canvas)
