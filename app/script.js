@@ -88,9 +88,10 @@ async function handleClick(event) {
             });
             drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
             console.log(landmark[11, 12])
-            let med_ombro_esquerdo = landmark[11][0] * parseInt(canvas.width)
-            let med_ombro_direito = landmark[12][0] * parseInt(canvas.width)
+            let med_ombro_esquerdo = landmark[11].x * parseInt(canvas.width)
+            let med_ombro_direito = landmark[12].x * parseInt(canvas.width)
             console.log(med_ombro_esquerdo - med_ombro_direito)
+            console.log(canvas.width)
         }
         console.log(canvas)
     });
