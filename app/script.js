@@ -87,11 +87,10 @@ async function handleClick(event) {
                 radius: (data) => DrawingUtils.lerp(data.from.z, -0.15, 0.1, 5, 1)
             });
             drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
-            console.log(result.landmarks, landmark)
+            console.log(result.landmarks[11], landmark[11])
         }
         console.log(canvas)
     });
-    console.log(poseLandmarker)
 }
 /********************************************************************
 // Demo 2: Continuously grab image from webcam stream and detect it.
