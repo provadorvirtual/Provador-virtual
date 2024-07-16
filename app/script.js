@@ -42,7 +42,7 @@ createPoseLandmarker();
 // CSS class 'detectionOnClick'. Lets get all the elements that have
 // this class.
 const imageContainers = document.getElementsByClassName("detectOnClick");
-import EXIF from "../node_modules/exif-js";
+import EXIF from "/workspaces/Provador-virtual/node_modules/exif-js";
 window.onload=getExif;
 imageContainers.onload = function() {
     EXIF.getData(imageContainers, function(){
