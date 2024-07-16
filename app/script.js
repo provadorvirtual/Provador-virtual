@@ -42,6 +42,15 @@ createPoseLandmarker();
 // CSS class 'detectionOnClick'. Lets get all the elements that have
 // this class.
 const imageContainers = document.getElementsByClassName("detectOnClick");
+import EXIF from "exif-js";
+window.onload=getExif;
+imageContainers.onload = function() {
+    EXIF.getData(imageContainers, function(){
+      var allMetaData = EXIF.getAllTags(this);
+      var dpiX = allMetaData.XResolution;
+      console.log(dpiX)
+    })
+}
 // Now let's go through all of these and add a click event listener.
 for (let i = 0; i < imageContainers.length; i++) {
     // Add event listener to the child element whichis the img element.
@@ -90,8 +99,9 @@ async function handleClick(event) {
             console.log(landmark[11, 12])
             let med_ombro_esquerdo = landmark[11].x * parseInt(canvas.width)
             let med_ombro_direito = landmark[12].x * parseInt(canvas.width)
-            console.log(med_ombro_esquerdo - med_ombro_direito)
-            console.log(canvas.width)
+            console.log('comprimento do ombro esquerdo ao direito em px', med_ombro_esquerdo - med_ombro_direito)
+            console.log('largura da imagem (em px)', canvas.width)
+            
         }
         console.log(canvas)
     });

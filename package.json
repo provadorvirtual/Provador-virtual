@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@mediapipe/tasks-vision": "^0.10.12",
+    "exif-js": "^2.3.0",
     "firebase": "^10.10.0",
     "typescript": "^5.4.4"
   }
