@@ -11,6 +11,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 import { PoseLandmarker, FilesetResolver, DrawingUtils } from "https://cdn.skypack.dev/@mediapipe/tasks-vision@0.10.0";
+
+
 const demosSection = document.getElementById("demos");
 let poseLandmarker = undefined;
 let runningMode = "IMAGE";
@@ -42,15 +44,15 @@ createPoseLandmarker();
 // CSS class 'detectionOnClick'. Lets get all the elements that have
 // this class.
 const imageContainers = document.getElementsByClassName("detectOnClick");
-//import EXIF from "./exif-js";
-//window.onload=getExif;
-//imageContainers.onload = function() {
-//    EXIF.getData(imageContainers, function(){
-//      var allMetaData = EXIF.getAllTags(this);
-//      var dpiX = allMetaData.XResolution;
-//      console.log(dpiX)
-//    })
-//}
+import EXIF from 'exif-js';
+window.onload=getExif;
+imageContainers.onload = function() {
+    EXIF.getData(imageContainers, function(){
+      var allMetaData = EXIF.getAllTags(this);
+      var dpiX = allMetaData.XResolution;
+      console.log(dpiX)
+    })
+}
 // Now let's go through all of these and add a click event listener.
 for (let i = 0; i < imageContainers.length; i++) {
     // Add event listener to the child element whichis the img element.
@@ -101,6 +103,7 @@ async function handleClick(event) {
             let med_ombro_direito = landmark[12].x * parseInt(canvas.width)
             console.log('comprimento do ombro esquerdo ao direito em px', med_ombro_esquerdo - med_ombro_direito)
             console.log('largura da imagem (em px)', canvas.width)
+
             
         }
         console.log(canvas)
