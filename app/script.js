@@ -44,15 +44,7 @@ createPoseLandmarker();
 // CSS class 'detectionOnClick'. Lets get all the elements that have
 // this class.
 const imageContainers = document.getElementsByClassName("detectOnClick");
-const EXIF = require('exif-js/package.json');
-window.onload=getExif;
-imageContainers.onload = function() {
-    EXIF.getData(imageContainers, function(){
-      var allMetaData = EXIF.getAllTags(this);
-      var dpiX = allMetaData.XResolution;
-      console.log(dpiX)
-    })
-}
+
 // Now let's go through all of these and add a click event listener.
 for (let i = 0; i < imageContainers.length; i++) {
     // Add event listener to the child element whichis the img element.
