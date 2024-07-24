@@ -97,7 +97,7 @@ async function handleClick(event) {
             console.log('largura da imagem (em px)', canvas.width) 
             window.onload=getExif;
             function getExif() {
-                var Imginfo = EXIF.getData(imageContainers)
+                var Imginfo = EXIF.getData('https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721692800&semt=sph')
                 var dpiX = EXIF.getTag(Imginfo, "XResolution");
                 var dpiXValue = parseFloat(dpiX);
                 console.log('Resolução Horizontal (DPI): ' + dpiXValue);
