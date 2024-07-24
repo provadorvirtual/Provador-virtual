@@ -45,7 +45,6 @@ createPoseLandmarker();
 // this class.
 const imageContainers = document.getElementsByClassName("detectOnClick");
 
-const TheImg = document.getElementById("inputFile")
 
 // Now let's go through all of these and add a click event listener.
 for (let i = 0; i < imageContainers.length; i++) {
@@ -97,8 +96,8 @@ async function handleClick(event) {
             let med_ombro_direito = landmark[12].x * parseInt(canvas.width)
             console.log('comprimento do ombro esquerdo ao direito em px', med_ombro_esquerdo - med_ombro_direito)
             console.log('largura da imagem (em px)', canvas.width)
-            theImg.onload = function() {
-                EXIF.getData(TheImg, function() {
+            canvas.onload = function() {
+                EXIF.getData(canvas, function() {
                     var dpiX = EXIF.getTag(this, "XResolution");
                     if (dpiX) {
                         var dpiXValue = parseFloat(dpiX);
