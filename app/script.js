@@ -96,18 +96,15 @@ async function handleClick(event) {
             let med_ombro_direito = landmark[12].x * parseInt(canvas.width)
             console.log('comprimento do ombro esquerdo ao direito em px', med_ombro_esquerdo - med_ombro_direito)
             console.log('largura da imagem (em px)', canvas.width)
-            canvas.onload = function() {
-                EXIF.getData(canvas, function() {
-                    var dpiX = EXIF.getTag(this, "XResolution");
-                    if (dpiX) {
-                        var dpiXValue = parseFloat(dpiX);
-                        console.log('Resolução Horizontal (DPI): ' + dpiXValue);
-                    } else {
-                        console.log('As informações de DPI não estão disponíveis para esta imagem.');
-                    }
-                });
-            };
-            
+            EXIF.getData(canvas, function() {
+                var dpiX = EXIF.getTag(this, "XResolution");
+                if (dpiX) {
+                    var dpiXValue = parseFloat(dpiX);
+                    console.log('Resolução Horizontal (DPI): ' + dpiXValue);
+                } else {
+                    console.log('As informações de DPI não estão disponíveis para esta imagem.');
+                }
+            });    
             
         }
         console.log(canvas)
