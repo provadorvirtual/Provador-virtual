@@ -44,7 +44,8 @@ createPoseLandmarker();
 // CSS class 'detectionOnClick'. Lets get all the elements that have
 // this class.
 const imageContainers = document.getElementsByClassName("detectOnClick");
-const TheImg = document.getElementById("imagePreview")
+
+const TheImg = document.getElementById("inputFile")
 
 // Now let's go through all of these and add a click event listener.
 for (let i = 0; i < imageContainers.length; i++) {
@@ -101,7 +102,6 @@ async function handleClick(event) {
                     var dpiX = EXIF.getTag(this, "XResolution");
                     if (dpiX) {
                         var dpiXValue = parseFloat(dpiX);
-                        var dpiYValue = parseFloat(dpiY);
                         console.log('Resolução Horizontal (DPI): ' + dpiXValue);
                     } else {
                         console.log('As informações de DPI não estão disponíveis para esta imagem.');
