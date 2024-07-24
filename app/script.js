@@ -98,7 +98,7 @@ async function handleClick(event) {
             window.onload=getExif;
             function getExif() {
                 var Imginfo = EXIF.getData(imageContainers)
-                var dpiX = EXIF.getTag(imageContainers, "XResolution");
+                var dpiX = EXIF.getTag(Imginfo, "XResolution");
                 var dpiXValue = parseFloat(dpiX);
                 console.log('Resolução Horizontal (DPI): ' + dpiXValue);
             }
