@@ -28,14 +28,6 @@ limitations under the License. -->
 <body>
   <h1>Detector de Pose</h1>
   <input type="file" id="inputFile">
-  <script>
-    const Img = document.getElementById("inputFile")
-    var ImgData = EXIF.getData(Img)
-    var dpiX = EXIF.getTag(this, "XResolution");
-    var dpiXValue = parseFloat(dpiX);
-    console.log('Resolução Horizontal (DPI): ' + dpiXValue);
-
-  </script>
 <script>
 document.getElementById('inputFile').addEventListener('change', function(event) {
     const file = event.target.files[0]; // Obter o primeiro arquivo selecionado
