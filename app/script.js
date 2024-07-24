@@ -98,10 +98,11 @@ async function handleClick(event) {
             console.log('largura da imagem (em px)', canvas.width) 
             window.onload=getExif;
             function getExif() {
-            var Imginfo = EXIF.getData(canvas)
-            var dpiX = EXIF.getTag(Imginfo, "XResolution");
-            var dpiXValue = parseFloat(dpiX);
-            console.log('Resolução Horizontal (DPI): ' + dpiXValue);
+                var Getimg = document.getElementById("imagePreview")
+                var Imginfo = EXIF.getData(Getimg)
+                var dpiX = EXIF.getTag(Imginfo, "XResolution");
+                var dpiXValue = parseFloat(dpiX);
+                console.log('Resolução Horizontal (DPI): ' + dpiXValue);
             }
         }
         console.log(canvas)
