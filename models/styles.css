@@ -163,10 +163,9 @@ body, html {
 
 model-viewer{
     background-color:#ffffff;
-    width: 42vw;
-    height: 28.2vw;
+    width: 100%;
+    height: 100%;
     border: 2px solid rgba(255, 0, 0, 0.373);
     box-shadow: 22px 22px 22px rgba(0, 0, 0, 0.119);
     border-radius: 10%;
-    margin-top: 55px;
 }
