@@ -94,14 +94,11 @@ async function handleClick(event) {
             let med_ombro_esquerdo = landmark[11].x * parseInt(canvas.width)
             let med_ombro_direito = landmark[12].x * parseInt(canvas.width)
             console.log('comprimento do ombro esquerdo ao direito em px', med_ombro_esquerdo - med_ombro_direito)
-            console.log('largura da imagem (em px)', canvas.width) 
-            window.onload=getExif;
-            function getExif() {
-                var Imginfo = EXIF.getData('https://img.freepik.com/fotos-gratis/estilo-de-vida-beleza-e-moda-conceito-de-emocoes-de-pessoas-jovem-gerente-de-escritorio-feminino-asiatico-ceo-com-expressao-satisfeita-em-pe-sobre-um-fundo-branco-sorrindo-com-os-bracos-cruzados-sobre-o-peito_1258-59329.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721692800&semt=sph')
-                var dpiX = EXIF.getTag(Imginfo, "XResolution");
-                var dpiXValue = parseFloat(dpiX);
-                console.log('Resolução Horizontal (DPI): ' + dpiXValue);
-            }
+            console.log('largura da imagem (em px)', canvas.width)
+            const Realme_8_5G = 405
+            let larguraPolegadas = (med_ombro_esquerdo - med_ombro_direito) / Realme_8_5G
+            let larguraReal = larguraPolegadas * 2.54
+            console.log('Sua medida de um ombro a outro equivale a ', larguraReal, ' centimetros')
         }
         console.log(canvas)
     });
