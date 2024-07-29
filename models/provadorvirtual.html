@@ -28,10 +28,18 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
     <div class="tablet-container">
         <div class="tablet-screen">
             <div class="main-content">
-                <div class="content-main">Modelo 3d</div>
+                <div class="content-main">
+                    <model-viewer id="flamengo22-23" class="provador-virtual" camera-target="0m 330m 600.8m" src="roupas/flamengo.gltf" camera-controls touch-action="pan-y"></model-viewer>
+                    <model-viewer id="NIRVANA" class="provador-virtual" src="roupas/nirvana.gltf" camera-controls touch-action="pan-y"></model-viewer>
+                    <model-viewer id="CR7-Homenagem" class="provador-virtual" src="roupas/cristianohomenagem.gltf" camera-controls touch-action="pan-y"></model-viewer>
+                    <!--funcionamento basico - nao altere nada aqui - nao cite o ID de qualquer modelviewer, apenas sua classe-->
+                    <style>#flamengo22-23{display: none;}#NIRVANA{display: none;}#CR7-Homenagem{display: none;}</style>
+                    <style>#flamengo22-23:target{display: block;}#NIRVANA:target{display: block;}#CR7-Homenagem:target{display: block;}</style> 
+                </div>
                 <div class="content-bottom">
                     <div class="circle-buttons">
                         <button class="circle-button">1</button>
