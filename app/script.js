@@ -1,16 +1,46 @@
-// Copyright 2023 The MediaPipe Authors.
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-import { PoseLandmarker, FilesetResolver, DrawingUtils } from "https://cdn.skypack.dev/@mediapipe/tasks-vision@0.10.0";
+  function toggleInputType() {
+      const inputType = document.getElementById('inputType').value;
+      const fileInput = document.getElementById('fileInput');
+      const cameraInput = document.getElementById('cameraInput');
+      
+      if (inputType === 'file') {
+        fileInput.style.display = 'block';
+        cameraInput.style.display = 'none';
+      } else {
+        fileInput.style.display = 'none';
+        cameraInput.style.display = 'block';
+      }
+    }
+    
+    document.getElementById('inputFile').addEventListener('change', function(event) {
+      const file = event.target.files[0]; // Obter o primeiro arquivo selecionado
+      if (file) {
+        const reader = new FileReader(); // Criar um FileReader para ler o conteúdo do arquivo
+        reader.onload = function(e) {
+          const imageSrc = e.target.result; // Obter o URL da imagem carregada
+          const imagePreview = document.getElementById('imagePreview');
+          imagePreview.src = imageSrc; // Definir o atributo 'src' da tag img para o URL da imagem
+          document.getElementById('imageContainer').style.display = 'block'; // Exibir a div que contém a imagem
+        };
+        reader.readAsDataURL(file); // Ler o arquivo como um URL de dados
+      }
+    });
+
+    toggleInputType(); // Chama a função ao carregar a página para definir a exibição inicial
+
+    // Copyright 2023 The MediaPipe Authors.
+    // Licensed under the Apache License, Version 2.0 (the "License");
+    // you may not use this file except in compliance with the License.
+    // You may obtain a copy of the License at
+    //
+    //      http://www.apache.org/licenses/LICENSE-2.0
+    //
+    // Unless required by applicable law or agreed to in writing, software
+    // distributed under the License is distributed on an "AS IS" BASIS,
+    // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    // See the License for the specific language governing permissions and
+    // limitations under the License.
+    import { PoseLandmarker, FilesetResolver, DrawingUtils } from "https://cdn.skypack.dev/@mediapipe/tasks-vision@0.10.0";
 
 const demosSection = document.getElementById("demos");
 let poseLandmarker = undefined;
@@ -179,3 +209,4 @@ async function predictWebcam() {
         window.requestAnimationFrame(predictWebcam);
     }
 }
+
