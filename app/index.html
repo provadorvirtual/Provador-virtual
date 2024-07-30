@@ -453,6 +453,7 @@ async function predictWebcam() {
                     radius: (data) => DrawingUtils.lerp(data.from.z, -0.15, 0.1, 5, 1)
                 });
                 drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
+                console.log(landmark[11, 12])
             }
             canvasCtx.restore();
         });
@@ -460,7 +461,6 @@ async function predictWebcam() {
     // Call this function again to keep predicting when the browser is ready.
     if (webcamRunning === true) {
         window.requestAnimationFrame(predictWebcam);
-        console.log(landmark[11, 12])
     }
 }
   </script>
