@@ -241,6 +241,7 @@ button#webcamButton:focus, input[type="file"]:focus {
         <div style="position: relative;">
           <video id="webcam" style="width: 100%; height: auto;" autoplay playsinline></video>
           <canvas class="output_canvas" id="output_canvas" style="position: absolute; left: 0; top: 0;"></canvas>
+          <h4 id='ShowCalcOmbro'></h4>
         </div>
         <button id="calculateCameraButton" class="mdc-button mdc-button--raised">
             <span class="mdc-button__ripple"></span>
@@ -454,6 +455,7 @@ async function predictWebcam() {
                 });
                 drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
                 console.log(landmark[11, 12])
+              
             }
             canvasCtx.restore();
         });
