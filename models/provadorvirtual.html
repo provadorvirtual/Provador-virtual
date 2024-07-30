@@ -36,9 +36,10 @@
                     <model-viewer id="flamengo22-23" class="provador-virtual" camera-target="0m 330m 600.8m" src="roupas/flamengo.gltf" camera-controls touch-action="pan-y"></model-viewer>
                     <model-viewer id="NIRVANA" class="provador-virtual" src="roupas/nirvana.gltf" camera-controls touch-action="pan-y"></model-viewer>
                     <model-viewer id="CR7-Homenagem" class="provador-virtual" src="roupas/cristianohomenagem.gltf" camera-controls touch-action="pan-y"></model-viewer>
+                    <model-viewer id='Female' class="provador-virtual" src="roupas/female.gltf" camera-controls touch-action="pan-y"></model-viewer>
                     <!--funcionamento basico - nao altere nada aqui - nao cite o ID de qualquer modelviewer, apenas sua classe-->
-                    <style>#flamengo22-23{display: none;}#NIRVANA{display: none;}#CR7-Homenagem{display: none;}</style>
-                    <style>#flamengo22-23:target{display: block;}#NIRVANA:target{display: block;}#CR7-Homenagem:target{display: block;}</style> 
+                    <style>#Female{display: none;}#flamengo22-23{display: none;}#NIRVANA{display: none;}#CR7-Homenagem{display: none;}</style>
+                    <style>#Female:target{display: block;}#flamengo22-23:target{display: block;}#NIRVANA:target{display: block;}#CR7-Homenagem:target{display: block;}</style> 
                 </div>
                 <div class="content-bottom">
                     <div class="circle-buttons">
@@ -51,9 +52,13 @@
             <div class="sidebar">
                 <div class="button-container">
                     <button class="floating-button">Maculino</button>
-                    <button class="floating-button">Feminino</button>
+                    <a href="https://provadorvirtual.netlify.app/models/provadorvirtual#Female" class="floating-button" style='width: 70px;'>Feminino</a>
                     <button class="floating-button">Calcular Automaticamente</button>
                     <button class="floating-button">Calcular Manualmente</button>
+                    <script>
+
+
+                    </script>
                    <!--
                     <div class="reload">
                         <style>.floating-butto {
