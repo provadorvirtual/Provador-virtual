@@ -374,17 +374,17 @@ async function handleClick(event) {
                 radius: (data) => DrawingUtils.lerp(data.from.z, -0.15, 0.1, 5, 1)
             });
             drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
-            console.log(landmark[11, 12])
-            let med_ombro_esquerdo = landmark[11].x * parseInt(canvas.width)
-            let med_ombro_direito = landmark[12].x * parseInt(canvas.width)
-            console.log('comprimento do ombro esquerdo ao direito em px', med_ombro_esquerdo - med_ombro_direito)
-            console.log('largura da imagem (em px)', canvas.width)
-            const Realme_8_5G = 72
-            let larguraPolegadas = ( med_ombro_esquerdo - med_ombro_direito) / Realme_8_5G
-            let larguraReal = larguraPolegadas * 2.54
-            console.log(larguraReal)
+            //console.log(landmark[11, 12])
+            //let med_ombro_esquerdo = landmark[11].x * parseInt(canvas.width)
+            //let med_ombro_direito = landmark[12].x * parseInt(canvas.width)
+            //console.log('comprimento do ombro esquerdo ao direito em px', med_ombro_esquerdo - med_ombro_direito)
+            //console.log('largura da imagem (em px)', canvas.width)
+            //const Realme_8_5G = 72
+            //let larguraPolegadas = ( med_ombro_esquerdo - med_ombro_direito) / Realme_8_5G
+            //let larguraReal = larguraPolegadas * 2.54
+            //console.log(larguraReal)
 
-            console.log('Sua medida de um ombro a outro equivale a ', larguraReal, ' centimetros')
+            //console.log('Sua medida de um ombro a outro equivale a ', larguraReal, ' centimetros')
         }
         console.log(canvas)
     });
@@ -460,6 +460,7 @@ async function predictWebcam() {
     // Call this function again to keep predicting when the browser is ready.
     if (webcamRunning === true) {
         window.requestAnimationFrame(predictWebcam);
+        console.log(landmark[11, 12])
     }
 }
   </script>
