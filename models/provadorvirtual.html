@@ -51,6 +51,24 @@
             border: none;
         }
     </style>
+     <script>
+            function toggleGender() {
+            const button = document.getElementById('toggleButton');
+            const iframe = document.getElementById('modelFrame');
+
+            if (button.classList.contains('masculino')) {
+                button.classList.remove('masculino');
+                button.classList.add('feminino');
+                button.textContent = 'Feminino';
+                iframe.src = 'https://provadorvirtual.netlify.app/models/provadorvirtual#Female';
+            } else {
+                button.classList.remove('feminino');
+                button.classList.add('masculino');
+                button.textContent = 'Masculino';
+                iframe.src = 'https://provadorvirtual.netlify.app/models/provadorvirtual#NIRVANA';
+            }
+        }
+    </script>
 </head>
 <body>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
@@ -83,24 +101,7 @@
 
 
                     </script>
-                    <script>
-            function toggleGender() {
-            const button = document.getElementById('toggleButton');
-            const iframe = document.getElementById('modelFrame');
-
-            if (button.classList.contains('masculino')) {
-                button.classList.remove('masculino');
-                button.classList.add('feminino');
-                button.textContent = 'Feminino';
-                iframe.src = 'https://provadorvirtual.netlify.app/models/provadorvirtual#Female';
-            } else {
-                button.classList.remove('feminino');
-                button.classList.add('masculino');
-                button.textContent = 'Masculino';
-                iframe.src = 'https://provadorvirtual.netlify.app/models/provadorvirtual#NIRVANA';
-            }
-        }
-    </script>
+                   
                    <!--
                     <div class="reload">
                         <style>.floating-butto {
