@@ -26,6 +26,31 @@
     <script src="api.ts"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.js"
     crossorigin="anonymous"></script>
+    <style>
+        .toggle-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        .masculino {
+            background-color: #007BFF; /* Azul */
+        }
+        .feminino {
+            background-color: #FF69B4; /* Rosa */
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
 </head>
 <body>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
@@ -51,14 +76,31 @@
             </div>
             <div class="sidebar">
                 <div class="button-container">
-                    <a href="https://provadorvirtual.netlify.app/models/provadorvirtual#NIRVANA" class="floating-button" style='width: 70px;'>Maculino</a>
-                    <a href="https://provadorvirtual.netlify.app/models/provadorvirtual#Female" class="floating-button" style='width: 70px;'>Feminino</a>
+                    <button id="toggleButton" class="toggle-button masculino" onclick="toggleGender()">Masculino</button>
                     <button class="floating-button">Calcular Automaticamente</button>
                     <button class="floating-button">Calcular Manualmente</button>
                     <script>
 
 
                     </script>
+                    <script>
+            function toggleGender() {
+            const button = document.getElementById('toggleButton');
+            const iframe = document.getElementById('modelFrame');
+
+            if (button.classList.contains('masculino')) {
+                button.classList.remove('masculino');
+                button.classList.add('feminino');
+                button.textContent = 'Feminino';
+                iframe.src = 'https://provadorvirtual.netlify.app/models/provadorvirtual#Female';
+            } else {
+                button.classList.remove('feminino');
+                button.classList.add('masculino');
+                button.textContent = 'Masculino';
+                iframe.src = 'https://provadorvirtual.netlify.app/models/provadorvirtual#NIRVANA';
+            }
+        }
+    </script>
                    <!--
                     <div class="reload">
                         <style>.floating-butto {
