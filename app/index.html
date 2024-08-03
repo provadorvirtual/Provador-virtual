@@ -468,7 +468,7 @@ async function predictWebcam() {
                 const MediumshoulderWidthCm = 40;
                 const scaleFactor = MediumshoulderWidthCm / distancePixels;
                 const distanceCm = distancePixels * scaleFactor;
-                console.log(`Distância entre os ombros: ${distanceCm.toFixed(2)} cm`);
+                console.log(distanceCm)
             }
             canvasCtx.restore();
         });
