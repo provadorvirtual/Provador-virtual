@@ -457,8 +457,8 @@ async function predictWebcam() {
                     radius: (data) => DrawingUtils.lerp(data.from.z, -0.15, 0.1, 5, 1)
                 });
                 drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
-                const rightShoulder = results.poseLandmarks[11]; // Índice 11 é o ombro direito
-                const leftShoulder = results.poseLandmarks[12];  // Índice 12 é o ombro esquerdo
+                const rightShoulder = landmark[11]; // Índice 11 é o ombro direito
+                const leftShoulder = landmark[12];  // Índice 12 é o ombro esquerdo
                 function euclideanDistance(point1, point2) {
                   const dx = point1.x - point2.x;
                   const dy = point1.y - point2.y;
