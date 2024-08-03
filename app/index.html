@@ -249,6 +249,7 @@ button#webcamButton:focus, input[type="file"]:focus {
         </button>
         <h4 id="med-ombro">0</h4>
         <h4 id="med-img">0</h4>
+        <h4 id="med-dist">0</h4>
       </div>
     </div>
   </div>
@@ -461,6 +462,8 @@ async function predictWebcam() {
                 let ImprimeMed = med_ombro_esquerdo - med_ombro_direito
                 document.getElementById('med-ombro').innerHTML = ImprimeMed;
                 document.getElementById('med-img').innerHTML = canvasElement.width;
+                document.getElementById('med-dist').innerHTML = landmark[11].z;
+
    
             }
             canvasCtx.restore();
