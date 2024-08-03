@@ -457,14 +457,18 @@ async function predictWebcam() {
                     radius: (data) => DrawingUtils.lerp(data.from.z, -0.15, 0.1, 5, 1)
                 });
                 drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
-                let med_ombro_esquerdo = landmark[11].x * parseInt(canvasElement.width)
-                let med_ombro_direito = landmark[12].x * parseInt(canvasElement.width)
-                let ImprimeMed = med_ombro_esquerdo - med_ombro_direito
-                document.getElementById('med-ombro').innerHTML = ImprimeMed;
-                document.getElementById('med-img').innerHTML = canvasElement.width;
-                document.getElementById('med-dist').innerHTML = landmark[11].z;
-
-   
+                const rightShoulder = results.poseLandmarks[11]; // Índice 11 é o ombro direito
+                const leftShoulder = results.poseLandmarks[12];  // Índice 12 é o ombro esquerdo
+                function euclideanDistance(point1, point2) {
+                  const dx = point1.x - point2.x;
+                  const dy = point1.y - point2.y;
+                  return Math.sqrt(dx * dx + dy * dy);
+                }
+                const distancePixels = euclideanDistance(rightShoulder, leftShoulder);
+                const MediumshoulderWidthCm = 40;
+                const scaleFactor = MediumshoulderWidthCm / distancePixels;
+                const distanceCm = distancePixels * scaleFactor;
+                console.log(`Distância entre os ombros: ${distanceCm.toFixed(2)} cm`);
             }
             canvasCtx.restore();
         });
