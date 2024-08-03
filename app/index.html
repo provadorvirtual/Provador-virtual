@@ -458,7 +458,7 @@ async function predictWebcam() {
                 let med_ombro_esquerdo = landmark[11].x * parseInt(canvasElement.width)
                 let med_ombro_direito = landmark[12].x * parseInt(canvasElement.width)
                 let ImprimeMed = console.log('comprimento do ombro esquerdo ao direito em px', med_ombro_esquerdo - med_ombro_direito)
-                document.getElementById('med-ombro').textContent == ImprimeMed;
+                document.getElementById('med-ombro').innerHTML = ImprimeMed;
             }
             canvasCtx.restore();
         });
