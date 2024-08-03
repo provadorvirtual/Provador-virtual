@@ -248,8 +248,6 @@ button#webcamButton:focus, input[type="file"]:focus {
             <span class="mdc-button__label">Calcular</span>
         </button>
         <h4 id="med-ombro">0</h4>
-        <h4 id="med-img">0</h4>
-        <h4 id="med-dist">0</h4>
       </div>
     </div>
   </div>
@@ -468,7 +466,7 @@ async function predictWebcam() {
                 const MediumshoulderWidthCm = 40;
                 const scaleFactor = MediumshoulderWidthCm / distancePixels;
                 const distanceCm = distancePixels * scaleFactor;
-                console.log(distanceCm)
+                document.getElementById('med-ombro').innerHTML = distanceCm;
             }
             canvasCtx.restore();
         });
