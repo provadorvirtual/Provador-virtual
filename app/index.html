@@ -376,17 +376,21 @@ async function handleClick(event) {
                 radius: (data) => DrawingUtils.lerp(data.from.z, -0.15, 0.1, 5, 1)
             });
             drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
-            //console.log(landmark[11, 12])
-            //let med_ombro_esquerdo = landmark[11].x * parseInt(canvas.width)
-            //let med_ombro_direito = landmark[12].x * parseInt(canvas.width)
-            //console.log('comprimento do ombro esquerdo ao direito em px', med_ombro_esquerdo - med_ombro_direito)
-            //console.log('largura da imagem (em px)', canvas.width)
-            //const Realme_8_5G = 72
-            //let larguraPolegadas = ( med_ombro_esquerdo - med_ombro_direito) / Realme_8_5G
-            //let larguraReal = larguraPolegadas * 2.54
-            //console.log(larguraReal)
+            const rightShoulder = landmark[11]; // Índice 11 é o ombro direito
+            const leftShoulder = landmark[12];  // Índice 12 é o ombro esquerdo
+            function euclideanDistance(point1, point2) {
+              const dx = point1.x - point2.x;
+              const dy = point1.y - point2.y;
+              return Math.sqrt(dx * dx + dy * dy);
+            }
+            const distance = euclideanDistance(rightShoulder, leftShoulder);
+            const distancePixels = distance * parseInt(canvasElement.width)
+            const personHeightCm = 180;
+            const personHeightPixels = Math.abs(landmark[0].y - landmark[24].y);
+            console.log(personHeightPixels)
+            const distanceCm = (distancePixels / personHeightPixels) * personHeightCm;
 
-            //console.log('Sua medida de um ombro a outro equivale a ', larguraReal, ' centimetros')
+            document.getElementById('med-ombro').innerHTML = distanceCm;
         }
         console.log(canvas)
     });
@@ -456,21 +460,6 @@ async function predictWebcam() {
                     radius: (data) => DrawingUtils.lerp(data.from.z, -0.15, 0.1, 5, 1)
                 });
                 drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
-                const rightShoulder = landmark[11]; // Índice 11 é o ombro direito
-                const leftShoulder = landmark[12];  // Índice 12 é o ombro esquerdo
-                function euclideanDistance(point1, point2) {
-                  const dx = point1.x - point2.x;
-                  const dy = point1.y - point2.y;
-                  return Math.sqrt(dx * dx + dy * dy);
-                }
-                const distance = euclideanDistance(rightShoulder, leftShoulder);
-                const distancePixels = distance * parseInt(canvasElement.width)
-                const personHeightCm = 180;
-                const personHeightPixels = Math.abs(landmark[0].y - landmark[24].y);
-                console.log(personHeightPixels)
-                const distanceCm = (distancePixels / personHeightPixels) * personHeightCm;
-
-                document.getElementById('med-ombro').innerHTML = distanceCm;
             }
             canvasCtx.restore();
         });
