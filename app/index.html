@@ -385,7 +385,8 @@ async function handleClick(event) {
               const dy = point1.y - point2.y;
               return Math.sqrt(dx * dx + dy * dy);
             }
-            console.log(canvasElement.width, canvasElement.height)
+            let imageWidth = parseInt(document.getElementById('imagePreview').width)
+            console.log(imageWidth)
             const distance = euclideanDistance(rightShoulder, leftShoulder);
             const distancePixels = distance * parseInt(canvasElement.width)
             console.log(distancePixels)
