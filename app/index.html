@@ -386,12 +386,12 @@ async function handleClick(event) {
               return Math.sqrt(dx * dx + dy * dy);
             }
             let imageWidth = parseInt(document.getElementById('imagePreview').width)
-            console.log(imageWidth)
+            let imageheight = parseInt(document.getElementById('imagePreview').height)
             const distance = euclideanDistance(rightShoulder, leftShoulder);
-            const distancePixels = distance * parseInt(canvasElement.width)
+            const distancePixels = distance * imageWidth
             console.log(distancePixels)
             const personHeightCm = parseInt(prompt('Insira sua altura (cm):'));
-            const personHeightPixels = euclideanDistance(altura_cima, altura_baixo) * canvasElement.height;
+            const personHeightPixels = euclideanDistance(altura_cima, altura_baixo) * imageheight;
             console.log(personHeightPixels)
             const distanceCm = (distancePixels / personHeightPixels) * personHeightCm;
 
