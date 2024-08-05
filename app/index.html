@@ -303,8 +303,8 @@ let poseLandmarker = undefined;
 let runningMode = "IMAGE";
 let enableWebcamButton;
 let webcamRunning = false;
-const videoHeight = "360px";
-const videoWidth = "480px";
+const videoHeight = "480px";
+const videoWidth = "640px";
 // Before we can use PoseLandmarker class we must wait for it to finish
 // loading. Machine Learning models can be large and take a moment to
 // get everything needed to run.
@@ -435,6 +435,7 @@ function enableCam(event) {
 }
 let lastVideoTime = -1;
 async function predictWebcam() {
+
     canvasElement.style.height = videoHeight;
     video.style.height = videoHeight;
     canvasElement.style.width = videoWidth;
