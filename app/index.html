@@ -386,7 +386,7 @@ async function handleClick(event) {
             const distance = euclideanDistance(rightShoulder, leftShoulder);
             const distancePixels = distance * parseInt(canvasElement.width)
             const personHeightCm = 180;
-            const personHeightPixels = Math.abs(landmark[0].y - landmark[24].y);
+            const personHeightPixels = Math.abs(landmark[0].y - landmark[24].y) * canvasElement.height;
             console.log(personHeightPixels)
             const distanceCm = (distancePixels / personHeightPixels) * personHeightCm;
 
