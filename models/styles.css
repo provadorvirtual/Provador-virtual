@@ -124,6 +124,11 @@ model-viewer{
     box-shadow: 22px 22px 22px rgba(0, 0, 0, 0.119);
     border-radius: 10%;
 }
+#centered-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Responsividade */
 @media (max-width: 900px) {
     .tablet-container {
