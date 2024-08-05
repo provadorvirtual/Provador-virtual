@@ -462,8 +462,8 @@ async function predictWebcam() {
                   const dy = point1.y - point2.y;
                   return Math.sqrt(dx * dx + dy * dy);
                 }
-                const distancePixels = euclideanDistance(rightShoulder, leftShoulder);
-                console.log(distancePixels)
+                const distance = euclideanDistance(rightShoulder, leftShoulder);
+                const distancePixels = distance * parseInt(canvasElement.width)
                 const MediumshoulderWidthCm = 40;
                 const scaleFactor = MediumshoulderWidthCm / distancePixels;
                 const distanceCm = distancePixels * scaleFactor;
