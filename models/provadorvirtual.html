@@ -140,8 +140,8 @@
             var width = 0;
             var interval = setInterval(function() {
                 if (width >= 100) {
-                    clearInterval(interval);
                     setTimeout(function(){}, 1000)
+                    clearInterval(interval);
                 } else {
                     width++;
                     progressBar.style.width = width + '%';
