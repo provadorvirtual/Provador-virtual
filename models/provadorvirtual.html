@@ -110,9 +110,10 @@
                     <a href="https://provadorvirtual.netlify.app/models/provadorvirtual#NIRVANA" class="floating-button" >Masculino</a>
                     <a href="https://provadorvirtual.netlify.app/models/provadorvirtual#Female" class="floating-button" >Feminino</a>
                     <a href='../app/index.html' class="floating-button">Calcular Automaticamente</a>
+                    <div id="targetDiv"></div>
                     <script>
-
-
+                    const sharedData = localStorage.getItem('sharedData');
+                    document.getElementById('targetDiv').innerText = sharedData;
                     </script>
                    <!--
                     <div class="reload">
