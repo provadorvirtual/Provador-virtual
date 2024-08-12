@@ -280,10 +280,6 @@ button#webcamButton:focus, input[type="file"]:focus {
             <a href="../models/provadorvirtual.html" class="mdc-button__label">Calcular</a>
           </button>
           <h4 id="med-ombro"></h4>
-          <script>
-            const data = document.getElementById('med-ombro').innerText;
-            localStorage.setItem('sharedData', data);
-          </script>
       </div>
     </div>
     <div id="cameraInput" class="option">
@@ -451,6 +447,8 @@ async function handleClick(event) {
             document.getElementById('med-ombro').innerHTML = distanceCm;
         }
         console.log(canvas)
+        const data = document.getElementById('med-ombro').innerText;
+        localStorage.setItem('sharedData', data);
     });
 }
 /********************************************************************
