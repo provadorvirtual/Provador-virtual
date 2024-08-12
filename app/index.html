@@ -263,8 +263,8 @@ button#webcamButton:focus, input[type="file"]:focus {
     <div id="loading-bar">
         <div id="loading-text">0%</div>
     </div>
-</div>
-  <section id="demos" class="invisible">
+  </div>
+<section id="demos" class="content">
   <div class="container">
     <h1>Detector de Pose</h1>
     <select id="inputType" onchange="toggleInputType()">
@@ -302,7 +302,7 @@ button#webcamButton:focus, input[type="file"]:focus {
       </div>
     </div>
   </div>
-  </section>
+</section>
   <script>
     function toggleInputType() {
       const inputType = document.getElementById('inputType').value;
@@ -542,7 +542,7 @@ async function predictWebcam() {
                 clearInterval(interval);
                 setTimeout(() => {
                     loadingContainer.style.opacity = 0;
-                    content.style.display = 'none';
+                    content.style.display = 'block';
                     setTimeout(() => {
                         loadingContainer.style.display = 'none';
                     }, 1000); // Tempo para completar a transição
