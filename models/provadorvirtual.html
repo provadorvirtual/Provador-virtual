@@ -26,61 +26,58 @@
     <script src="api.ts"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.js"
     crossorigin="anonymous"></script>
-
-
     <style>
-        /* Estilos da tela de carregamento */
-        #loading-screen {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            z-index: 9999;
-        }
+    /* Estilos da barra de progresso */
+    #loading-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 400px; /* Largura máxima da barra de progresso */
+        height: 30px; /* Altura da barra */
+        background-color: #e0e0e0; /* Cor de fundo da barra */
+        border-radius: 15px; /* Borda arredondada */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+        z-index: 9999;
+        text-align: center;
+        line-height: 30px; /* Alinha verticalmente o texto */
+    }
 
-        /* Estilos da barra de progresso */
-        #progress-bar-container {
-            width: 80%;
-            background-color: #f3f3f3;
-            border-radius: 25px;
-            overflow: hidden;
-            margin-top: 20px;
-        }
+    #loading-bar {
+        height: 100%;
+        width: 0;
+        background-color: #28a745; /* Verde */
+        border-radius: 15px;
+        position: relative;
+        transition: width 0.4s ease;
+    }
 
-        #progress-bar {
-            width: 0;
-            height: 20px;
-            background-color: #4caf50;
-            text-align: center;
-            line-height: 20px;
-            color: white;
-            border-radius: 25px 0 0 25px;
-        }
+    #loading-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-weight: bold;
+        pointer-events: none;
+    }
 
-        /* Ocultar o conteúdo por padrão */
-        #content {
-            display: none;
-        }
-    </style>
-
-
-
-
+    /* Estilos para o conteúdo da página */
+    #content {
+        display: none;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+    }
+</style>
 
 </head>
 <body>
 
-    <!-- Tela de carregamento -->
-    <div id="loading-screen">
-        <div id="loading-text">Carregando...</div>
-        <div id="progress-bar-container">
-            <div id="progress-bar">0%</div>
+    <!-- Barra de progresso -->
+    <div id="loading-container">
+        <div id="loading-bar">
+            <div id="loading-text">0%</div>
         </div>
     </div>
 
@@ -134,30 +131,30 @@
 
     <!-- Script no final do body -->
     <script>
-        // Simulação de progresso de carregamento
-        document.addEventListener('DOMContentLoaded', function() {
-            var progressBar = document.getElementById('progress-bar');
-            var width = 0;
-            var interval = setInterval(function() {
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingContainer = document.getElementById('loading-container');
+            const loadingBar = document.getElementById('loading-bar');
+            const loadingText = document.getElementById('loading-text');
+            const content = document.getElementById('content');
+
+            // Simula o carregamento da página
+            let width = 0;
+            const interval = setInterval(() => {
                 if (width >= 100) {
                     clearInterval(interval);
+                    setTimeout(() => {
+                        loadingContainer.style.opacity = 0;
+                        content.style.display = 'block';
+                        setTimeout(() => {
+                            loadingContainer.style.display = 'none';
+                        }, 1000); // Tempo para completar a transição
+                    }, 2000); // Atraso de 2 segundos
                 } else {
-                    width++;
-                    progressBar.style.width = width + '%';
-                    progressBar.textContent = width + '%';
+                    width += 1; // Aumenta a largura da barra de progresso
+                    loadingBar.style.width = width + '%';
+                    loadingText.textContent = width + '%'; // Atualiza o texto com a porcentagem
                 }
-            }, 50); // Aumenta a largura a cada 50ms
-        });
-
-        // Quando a página terminar de carregar
-        window.addEventListener('load', function() {
-            // Esconder a tela de carregamento
-            var loadingScreen = document.getElementById('loading-screen');
-            loadingScreen.style.display = 'none';
-
-            // Exibir o conteúdo da página
-            var content = document.getElementById('content');
-            content.style.display = 'block';
+            }, 30); // Ajuste o intervalo para controlar a velocidade do carregamento
         });
     </script>
 </body>
