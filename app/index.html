@@ -402,12 +402,14 @@ async function handleClick(event) {
 
             document.getElementById('med-ombro').innerHTML = distanceCm;
 
+            let calcx = distanceCm / 40
+            sessionStorage.setItem('calcx', calcx)
+
         }
         console.log(canvas)
         const data = document.getElementById('med-ombro').innerText;
         sessionStorage.setItem('sharedData', data);
-        let calcx = data / 40
-        sessionStorage.setItem('calcx', calcx)
+        
         
     });
 }
