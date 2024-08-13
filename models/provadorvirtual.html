@@ -179,7 +179,7 @@
         // Função para aplicar a escala alterada no eixo Y
         function setScaledModel() {
         const modelViewer = document.getElementById('model');
-        const currentScale = modelViewer.getAttribute('scale') || defaultScale;
+        const currentScale = modelViewer.style.scale || defaultScale;
         const [x, y, z] = currentScale.split(' ').map(Number);
         const newScale = `${scaledX} ${scaledY} ${z}`;
         modelViewer.setAttribute('scale', newScale);
