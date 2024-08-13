@@ -442,6 +442,7 @@ async function handleClick(event) {
             const distancePixels = distance * imageWidth
             console.log(distancePixels)
             const personHeightCm = parseInt(prompt('Insira sua altura (cm):'));
+            sessionStorage.setItem('sharedData', personHeightCm)
             const personHeightPixels = euclideanDistance(altura_cima, altura_baixo) * imageheight;
             console.log(personHeightPixels)
             const distanceCm = (distancePixels / personHeightPixels) * personHeightCm;
@@ -451,6 +452,7 @@ async function handleClick(event) {
         console.log(canvas)
         const data = document.getElementById('med-ombro').innerText;
         sessionStorage.setItem('sharedData', data);
+        
     });
 }
 /********************************************************************
