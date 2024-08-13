@@ -230,7 +230,7 @@ button#webcamButton:focus, input[type="file"]:focus {
         </div>
         <button id="calculateFileButton" class="mdc-button mdc-button--raised">
             <span class="mdc-button__ripple"></span>
-            <a href="../models/provadorvirtual.html" class="mdc-button__label" style="text-decoration: none;">Calcular</a>
+            <a href="../models/provadorvirtual.html#NIRVANA" class="mdc-button__label">Calcular</a>
           </button>
           <h4 id="med-ombro"></h4>
       </div>
@@ -248,7 +248,7 @@ button#webcamButton:focus, input[type="file"]:focus {
         </div>
         <button id="calculateCameraButton" class="mdc-button mdc-button--raised">
             <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label" style="text-decoration: none;">Calcular</span>
+            <span class="mdc-button__label">Calcular</span>
         </button>
       </div>
     </div>
@@ -393,16 +393,21 @@ async function handleClick(event) {
             const distancePixels = distance * imageWidth
             console.log(distancePixels)
             const personHeightCm = parseInt(prompt('Insira sua altura (cm):'));
-            sessionStorage.setItem('sharedData', personHeightCm)
+            sessionStorage.setItem('Altura', personHeightCm)
+            let calcy = personHeightCm / 180
+            sessionStorage.setItem('calcy', calcy)
             const personHeightPixels = euclideanDistance(altura_cima, altura_baixo) * imageheight;
             console.log(personHeightPixels)
             const distanceCm = (distancePixels / personHeightPixels) * personHeightCm;
 
             document.getElementById('med-ombro').innerHTML = distanceCm;
+
         }
         console.log(canvas)
         const data = document.getElementById('med-ombro').innerText;
         sessionStorage.setItem('sharedData', data);
+        let calcx = data / 40
+        sessionStorage.setItem('calcx', calcx)
         
     });
 }

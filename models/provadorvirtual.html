@@ -69,6 +69,9 @@
         padding: 20px;
         font-family: Arial, sans-serif;
     }
+    .provador-virtual{
+        transition: transform 0.5s ease; 
+    }
 </style>
 
 </head>
@@ -93,10 +96,48 @@
                     <!--funcionamento basico - nao altere nada aqui - nao cite o ID de qualquer modelviewer, apenas sua classe-->
                     <style>#Female{display: none;}#flamengo22-23{display: none;}#NIRVANA{display: none;}#CR7-Homenagem{display: none;}</style>
                     <style>#Female:target{display: block;}#flamengo22-23:target{display: block;}#NIRVANA:target{display: block;}#CR7-Homenagem:target{display: block;}</style> 
+                
+                    <script>
+
+
+                        const defaultScale = '1 1 1'; // Escala padrão
+                        const scaledY = sessionStorage.getItem('calcy');          // Escala alterada para o eixo Y
+                        const scaledX = sessionStorage.getItem('calcx')
+                        // Função para aplicar a escala padrão
+                        function setDefaultScale() {
+                        const modelViewer = document.getElementById('model');
+                        modelViewer.setAttribute('scale', defaultScale);
+                        }
+
+                        // Função para aplicar a escala alterada no eixo Y
+                        function setScaledModel() {
+                        const modelViewer = document.getElementById('model');
+                        const currentScale = modelViewer.getAttribute('scale') || defaultScale;
+                        const [x, y, z] = currentScale.split(' ').map(Number);
+                        const newScale = `${scaledX} ${scaledY} ${z}`;
+                        modelViewer.setAttribute('scale', newScale);
+                        if (scaledX < 1.1){
+                            alert('O melhor tamanho para você é: P')
+                        }
+                        if (scaledX >= 1.1 && scaledX <= 1.3){
+                            alert('O melhor tamanho para você é: M')
+                        }
+                        if (scaledX >= 1.4){
+                            alert('O melhor tamanho para você é: G')
+                        }
+                        }
+                        // const modelViewer = document.getElementsByClassName('provador-virtual');
+                        // let scaleHeight = sessionStorage.getItem('calcy')
+                        // modelViewer.setAttribute('scale', scaleHeight);
+                    </script>
+                
+                
                 </div>
                 <div class="content-bottom">
                     <div class="circle-buttons">
                         <a href="info.html" class="button">Info</a>
+                        <button class="button" onclick="setDefaultScale();">Padrão</button>
+                        <button class="button" onclick="setScaledModel();">Sua medida</button>
                     </div>
                 </div>
             </div>
