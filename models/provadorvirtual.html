@@ -119,6 +119,15 @@
                     const sharedData = sessionStorage.getItem('sharedData')
                     const 1calcx = sessionStorage.getItem('calcx')
                     document.getElementById('targetDiv').innerText = sharedData;
+                    if (parseInt(sharedData) <= 36){
+                        alert('O melhor tamanho para você é: P')
+                    }
+                    if (parseInt(sharedData) >= 37 && parseInt(sharedData) <= 45){
+                        alert('O melhor tamanho para você é: M')
+                    }
+                    if (parseInt(sharedData) >= 46){
+                        alert('O melhor tamanho para você é: G')
+                    }
                     document.getElementById('target1Div').innerText = 1calcx;
                     </script>
                    <!--
@@ -145,7 +154,7 @@
             const loadingBar = document.getElementById('loading-bar');
             const loadingText = document.getElementById('loading-text');
             const content = document.getElementById('content');
-
+            
             // Simula o carregamento da página
             let width = 0;
             const interval = setInterval(() => {
@@ -193,6 +202,7 @@
         if (scaledX >= 1.4){
             alert('O melhor tamanho para você é: G')
         }
+        
         // const modelViewer = document.getElementsByClassName('provador-virtual');
         // let scaleHeight = sessionStorage.getItem('calcy')
         // modelViewer.setAttribute('scale', scaleHeight);
