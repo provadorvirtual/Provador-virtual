@@ -105,7 +105,6 @@
                     <div class="circle-buttons">
                         <a href="info.html" class="button">Info</a>
                         <button class="button" onclick="setDefaultScale();">Padrão</button>
-                        <button class="button" onclick="setScaledModel();">Sua medida</button>
                     </div>
                 </div>
             </div>
@@ -117,7 +116,8 @@
                     <div id="targetDiv"></div>
                     <script>
                     const sharedData = sessionStorage.getItem('sharedData')
-                    document.getElementById('targetDiv').innerText = sharedData;
+                    const calcy = sessionStorage.getItem('calcy')
+                    document.getElementById('targetDiv').innerText = sharedData, calcy;
                     </script>
                    <!--
                     <div class="reload">
@@ -177,7 +177,6 @@
         }
 
         // Função para aplicar a escala alterada no eixo Y
-        function setScaledModel() {
         const modelViewer = document.getElementById('model');
         const currentScale = modelViewer.style.scale || defaultScale;
         const [x, y, z] = currentScale.split(' ').map(Number);
@@ -191,7 +190,6 @@
         }
         if (scaledX >= 1.4){
             alert('O melhor tamanho para você é: G')
-        }
         }
         // const modelViewer = document.getElementsByClassName('provador-virtual');
         // let scaleHeight = sessionStorage.getItem('calcy')
